@@ -71,19 +71,20 @@ header h1{
 }
 
 .main-wrapper{
-    max-width:1380px;
+    max-width:1500px;
     margin:auto;
     padding:45px 24px;
     display:grid;
-    grid-template-columns:32% 68%;
-    gap:32px;
+    grid-template-columns:28% 44% 28%;
+    gap:24px;
     align-items:start;
 }
 
-.sidebar{
+.sidebar,
+.resources{
     background:white;
     border-radius:26px;
-    padding:32px;
+    padding:30px;
     box-shadow:0 12px 30px rgba(15,23,42,0.08);
     border:1px solid #e2e8f0;
     margin-top:-75px;
@@ -91,24 +92,37 @@ header h1{
     top:22px;
 }
 
-.sidebar h2{
+.content{
+    margin-top:-75px;
+}
+
+.sidebar h2,
+.resources h2,
+.card h2{
     color:#0f3b63;
     font-size:26px;
     margin-bottom:18px;
 }
 
-.info-block{
-    margin-bottom:25px;
+.info-block,
+.resource-section{
+    margin-bottom:24px;
 }
 
-.info-block h3{
+.info-block h3,
+.resource-section h3,
+.agenda-item h3{
     color:#1f5b93;
-    font-size:17px;
+    font-size:18px;
     margin-bottom:8px;
 }
 
 .info-block p,
-.info-block li{
+.info-block li,
+.resource-section p,
+.resource-section li,
+.card p,
+.card li{
     color:#475569;
     font-size:14.5px;
 }
@@ -117,55 +131,21 @@ header h1{
     margin-left:18px;
 }
 
-.content{
-    margin-top:-75px;
-}
-
 .card{
     background:white;
     border-radius:26px;
-    padding:32px;
-    margin-bottom:26px;
+    padding:30px;
+    margin-bottom:24px;
     box-shadow:0 12px 30px rgba(15,23,42,0.08);
     border:1px solid #e2e8f0;
 }
 
-.card h2{
-    color:#0f3b63;
-    font-size:28px;
-    margin-bottom:16px;
-}
-
-.card h3{
-    color:#1f5b93;
-    font-size:21px;
-    margin-bottom:8px;
-}
-
-.card p,
-.card li{
-    color:#475569;
-    font-size:15.5px;
-}
-
-.flow{
-    background:#eef6ff;
-    border-left:6px solid #1f5b93;
-    border-radius:18px;
-    padding:24px;
-    text-align:center;
-    color:#0f3b63;
-    font-weight:800;
-    line-height:1.9;
-    font-size:17px;
-}
-
 .agenda-item{
-    padding:24px;
+    padding:22px;
     border-radius:20px;
     background:#f8fafc;
     border:1px solid #e2e8f0;
-    margin-bottom:18px;
+    margin-bottom:16px;
 }
 
 .agenda-item span{
@@ -178,30 +158,57 @@ header h1{
     margin-bottom:8px;
 }
 
-.resource-section{
+.case-flow{
+    background:#eef6ff;
+    border-left:6px solid #1f5b93;
+    border-radius:18px;
     padding:24px;
-    border-radius:20px;
-    background:#f8fafc;
-    border:1px solid #e2e8f0;
-    margin-bottom:18px;
+    color:#0f3b63;
+    font-weight:800;
+    line-height:1.9;
+    font-size:15.5px;
+}
+
+.flow-line{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:10px;
+    margin-top:18px;
+}
+
+.flow-step{
+    background:white;
+    border:1px solid #dbeafe;
+    border-radius:999px;
+    padding:10px 14px;
+    font-size:13px;
+    color:#0f3b63;
+    font-weight:800;
+}
+
+.arrow{
+    color:#1f5b93;
+    font-weight:900;
 }
 
 .buttons{
     display:flex;
-    flex-wrap:wrap;
-    gap:14px;
-    margin-top:18px;
+    flex-direction:column;
+    gap:12px;
+    margin-top:16px;
 }
 
 .btn{
-    display:inline-block;
+    display:block;
+    text-align:center;
     background:#1f5b93;
     color:white;
     text-decoration:none;
-    padding:12px 20px;
+    padding:12px 16px;
     border-radius:12px;
     font-weight:800;
-    font-size:14px;
+    font-size:13.5px;
     box-shadow:0 6px 14px rgba(31,91,147,0.25);
     transition:all .25s ease;
 }
@@ -217,15 +224,15 @@ header h1{
 
 .tools{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-    gap:14px;
-    margin-top:18px;
+    grid-template-columns:1fr;
+    gap:10px;
+    margin-top:14px;
 }
 
 .tool{
     background:#eef4fa;
     color:#0f3b63;
-    padding:12px 15px;
+    padding:11px 14px;
     border-radius:999px;
     font-size:13px;
     font-weight:800;
@@ -246,16 +253,30 @@ footer p{
     margin:6px 0;
 }
 
-@media(max-width:950px){
+@media(max-width:1100px){
     .main-wrapper{
         grid-template-columns:1fr;
     }
 
     .sidebar,
+    .resources,
     .content{
         margin-top:0;
         position:relative;
         top:0;
+    }
+
+    .buttons{
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+
+    .btn{
+        display:inline-block;
+    }
+
+    .tools{
+        grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
     }
 
     header h1{
@@ -273,6 +294,7 @@ footer p{
     }
 
     .sidebar,
+    .resources,
     .card{
         padding:24px;
     }
@@ -290,13 +312,9 @@ footer p{
 
         <div class="hero-title">
 
-            <div class="badge">
-                Webinar introductorio · FAO · MAG Costa Rica
-            </div>
-
             <h1>
                 Google Earth Engine para<br>
-                Monitoreo Territorial
+                Aplicaciones para agricultura, restauración y gestión ambiental 
             </h1>
 
             <p class="subtitle">
@@ -354,26 +372,6 @@ footer p{
     <section class="content">
 
         <div class="card">
-            <h2>Flujo del ejercicio práctico</h2>
-
-            <div class="flow">
-                SNIT Costa Rica (WFS)<br>
-                ↓<br>
-                QGIS<br>
-                ↓<br>
-                GeoJSON<br>
-                ↓<br>
-                Google Earth Engine<br>
-                ↓<br>
-                Sentinel-2<br>
-                ↓<br>
-                NDVI<br>
-                ↓<br>
-                Resultados
-            </div>
-        </div>
-
-        <div class="card">
             <h2>Agenda del webinar</h2>
 
             <div class="agenda-item">
@@ -418,66 +416,105 @@ footer p{
         </div>
 
         <div class="card">
-            <h2>Recursos del webinar</h2>
+            <h2>Caso práctico del webinar</h2>
 
-            <div class="resource-section">
-                <h3>Acceso a Google Earth Engine</h3>
-                <p>
-                    Antes del webinar, los participantes deben contar con una cuenta de Google activa y tener acceso habilitado a Google Earth Engine. Se recomienda ingresar previamente al Code Editor para verificar que la cuenta esté funcionando correctamente.
-                </p>
+            <p>
+                Durante la sesión se desarrollará un ejercicio aplicado que conecta datos nacionales con análisis satelital en la nube.
+            </p>
 
-                <div class="buttons">
-                    <a class="btn" target="_blank" href="https://earthengine.google.com/">
-                        Solicitar acceso a GEE
-                    </a>
+            <div class="case-flow">
 
-                    <a class="btn secondary" target="_blank" href="https://code.earthengine.google.com/">
-                        Abrir Code Editor
-                    </a>
+                Datos nacionales del SNIT
+                <br>
+                Preparación del área de interés en QGIS
+                <br>
+                Carga del GeoJSON en Google Earth Engine
+                <br>
+                Análisis de imágenes Sentinel-2
+                <br>
+                Cálculo de NDVI
+                <br>
+                Visualización y exportación de resultados
 
-                    <a class="btn secondary" target="_blank" href="https://www.youtube.com/results?search_query=crear+cuenta+google+earth+engine">
-                        Ver tutorial en YouTube
-                    </a>
+                <div class="flow-line">
+                    <div class="flow-step">SNIT</div>
+                    <div class="arrow">→</div>
+                    <div class="flow-step">QGIS</div>
+                    <div class="arrow">→</div>
+                    <div class="flow-step">GeoJSON</div>
+                    <div class="arrow">→</div>
+                    <div class="flow-step">GEE</div>
+                    <div class="arrow">→</div>
+                    <div class="flow-step">Sentinel-2</div>
+                    <div class="arrow">→</div>
+                    <div class="flow-step">NDVI</div>
                 </div>
+
             </div>
-
-            <div class="resource-section">
-                <h3>Herramientas complementarias</h3>
-                <p>
-                    Google Earth Engine puede integrarse con otras herramientas para ampliar capacidades de análisis, automatización, visualización e interoperabilidad geoespacial.
-                </p>
-
-                <div class="tools">
-                    <div class="tool">QGIS</div>
-                    <div class="tool">Google Colab</div>
-                    <div class="tool">geemap</div>
-                    <div class="tool">Python</div>
-                    <div class="tool">Dashboards WebGIS</div>
-                    <div class="tool">IA aplicada a SIG</div>
-                </div>
-            </div>
-
-            <div class="resource-section">
-                <h3>Enlaces útiles</h3>
-
-                <div class="buttons">
-                    <a class="btn" target="_blank" href="https://code.earthengine.google.com/">
-                        Abrir Google Earth Engine
-                    </a>
-
-                    <a class="btn secondary" target="_blank" href="https://www.snitcr.go.cr/">
-                        Portal SNIT Costa Rica
-                    </a>
-
-                    <a class="btn secondary" target="_blank" href="https://qgis.org/">
-                        Descargar QGIS
-                    </a>
-                </div>
-            </div>
-
         </div>
 
     </section>
+
+    <aside class="resources">
+
+        <h2>Recursos del webinar</h2>
+
+        <div class="resource-section">
+            <h3>Acceso a Google Earth Engine</h3>
+            <p>
+                Verifique previamente que su cuenta tenga acceso habilitado y que pueda ingresar al Code Editor.
+            </p>
+
+            <div class="buttons">
+                <a class="btn" target="_blank" href="https://earthengine.google.com/">
+                    Solicitar acceso
+                </a>
+
+                <a class="btn secondary" target="_blank" href="https://code.earthengine.google.com/">
+                    Code Editor
+                </a>
+
+                <a class="btn secondary" target="_blank" href="https://www.youtube.com/results?search_query=crear+cuenta+google+earth+engine">
+                    Tutorial YouTube
+                </a>
+            </div>
+        </div>
+
+        <div class="resource-section">
+            <h3>Herramientas complementarias</h3>
+            <p>
+                Herramientas que pueden ampliar el análisis, automatización e interoperabilidad.
+            </p>
+
+            <div class="tools">
+                <div class="tool">QGIS</div>
+                <div class="tool">Google Colab</div>
+                <div class="tool">geemap</div>
+                <div class="tool">Python</div>
+                <div class="tool">Dashboards WebGIS</div>
+                <div class="tool">IA aplicada a SIG</div>
+            </div>
+        </div>
+
+        <div class="resource-section">
+            <h3>Enlaces útiles</h3>
+
+            <div class="buttons">
+                <a class="btn" target="_blank" href="https://code.earthengine.google.com/">
+                    Abrir GEE
+                </a>
+
+                <a class="btn secondary" target="_blank" href="https://www.snitcr.go.cr/">
+                    SNIT Costa Rica
+                </a>
+
+                <a class="btn secondary" target="_blank" href="https://qgis.org/">
+                    QGIS
+                </a>
+            </div>
+        </div>
+
+    </aside>
 
 </main>
 
