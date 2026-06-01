@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Procesamiento Geoespacial en la Nube con Google Earth Engine</title>
+<title>Google Earth Engine para Monitoreo Territorial</title>
 
 <style>
 *{
@@ -23,26 +23,29 @@ body{
 header{
     background:linear-gradient(135deg,#0f3b63,#1f5b93);
     color:white;
-    padding:45px 25px 75px;
+    padding:45px 25px 80px;
     text-align:center;
 }
 
-.logos{
+.hero-header{
     display:flex;
-    justify-content:center;
     align-items:center;
-    gap:32px;
-    margin-bottom:28px;
+    justify-content:center;
+    gap:38px;
     flex-wrap:wrap;
 }
 
-.logos img{
-    max-height:62px;
+.hero-logo{
+    max-height:85px;
     width:auto;
     background:white;
-    padding:8px 12px;
-    border-radius:14px;
-    box-shadow:0 6px 16px rgba(0,0,0,0.18);
+    padding:10px 14px;
+    border-radius:16px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.18);
+}
+
+.hero-title{
+    max-width:760px;
 }
 
 .badge{
@@ -53,28 +56,26 @@ header{
     border-radius:999px;
     font-size:13px;
     font-weight:700;
-    margin-bottom:22px;
+    margin-bottom:18px;
 }
 
 header h1{
-    font-size:42px;
+    font-size:40px;
     line-height:1.2;
-    margin-bottom:16px;
+    margin-bottom:14px;
 }
 
 .subtitle{
-    max-width:920px;
-    margin:auto;
     font-size:18px;
     color:#dbeafe;
 }
 
 .main-wrapper{
-    max-width:1350px;
+    max-width:1380px;
     margin:auto;
     padding:45px 24px;
     display:grid;
-    grid-template-columns:34% 66%;
+    grid-template-columns:32% 68%;
     gap:32px;
     align-items:start;
 }
@@ -97,7 +98,7 @@ header h1{
 }
 
 .info-block{
-    margin-bottom:26px;
+    margin-bottom:25px;
 }
 
 .info-block h3{
@@ -133,6 +134,12 @@ header h1{
     color:#0f3b63;
     font-size:28px;
     margin-bottom:16px;
+}
+
+.card h3{
+    color:#1f5b93;
+    font-size:21px;
+    margin-bottom:8px;
 }
 
 .card p,
@@ -171,17 +178,19 @@ header h1{
     margin-bottom:8px;
 }
 
-.agenda-item h3{
-    color:#1f5b93;
-    font-size:21px;
-    margin-bottom:8px;
+.resource-section{
+    padding:24px;
+    border-radius:20px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    margin-bottom:18px;
 }
 
 .buttons{
     display:flex;
     flex-wrap:wrap;
     gap:14px;
-    margin-top:20px;
+    margin-top:18px;
 }
 
 .btn{
@@ -208,7 +217,7 @@ header h1{
 
 .tools{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
     gap:14px;
     margin-top:18px;
 }
@@ -237,7 +246,7 @@ footer p{
     margin:6px 0;
 }
 
-@media(max-width:900px){
+@media(max-width:950px){
     .main-wrapper{
         grid-template-columns:1fr;
     }
@@ -259,8 +268,8 @@ footer p{
 }
 
 @media(max-width:600px){
-    .logos img{
-        max-height:52px;
+    .hero-logo{
+        max-height:58px;
     }
 
     .sidebar,
@@ -275,23 +284,30 @@ footer p{
 
 <header>
 
-    <div class="logos">
-        <img src="assets/fao_logo.png" alt="FAO">
-        <img src="assets/gee_logo.png" alt="Google Earth Engine">
+    <div class="hero-header">
+
+        <img src="assets/fao_logo.png" alt="FAO" class="hero-logo">
+
+        <div class="hero-title">
+
+            <div class="badge">
+                Webinar introductorio · FAO · MAG Costa Rica
+            </div>
+
+            <h1>
+                Google Earth Engine para<br>
+                Monitoreo Territorial
+            </h1>
+
+            <p class="subtitle">
+                Aplicaciones para agricultura, monitoreo ambiental y gestión territorial.
+            </p>
+
+        </div>
+
+        <img src="assets/gee_logo.png" alt="Google Earth Engine" class="hero-logo">
+
     </div>
-
-    <div class="badge">
-        Webinar introductorio · FAO · MAG Costa Rica
-    </div>
-
-    <h1>
-        Procesamiento Geoespacial en la Nube<br>
-        con Google Earth Engine
-    </h1>
-
-    <p class="subtitle">
-        Aplicaciones para agricultura, monitoreo ambiental y gestión territorial mediante análisis satelital, datos nacionales y herramientas geoespaciales modernas.
-    </p>
 
 </header>
 
@@ -402,60 +418,63 @@ footer p{
         </div>
 
         <div class="card">
-            <h2>Acceso a Google Earth Engine</h2>
+            <h2>Recursos del webinar</h2>
 
-            <p>
-                Antes del webinar, los participantes deben contar con una cuenta de Google activa y tener acceso habilitado a Google Earth Engine. Se recomienda ingresar previamente al Code Editor para verificar que la cuenta esté funcionando correctamente.
-            </p>
+            <div class="resource-section">
+                <h3>Acceso a Google Earth Engine</h3>
+                <p>
+                    Antes del webinar, los participantes deben contar con una cuenta de Google activa y tener acceso habilitado a Google Earth Engine. Se recomienda ingresar previamente al Code Editor para verificar que la cuenta esté funcionando correctamente.
+                </p>
 
-            <div class="buttons">
-                <a class="btn" target="_blank" href="https://earthengine.google.com/">
-                    Solicitar acceso a GEE
-                </a>
+                <div class="buttons">
+                    <a class="btn" target="_blank" href="https://earthengine.google.com/">
+                        Solicitar acceso a GEE
+                    </a>
 
-                <a class="btn secondary" target="_blank" href="https://code.earthengine.google.com/">
-                    Abrir Code Editor
-                </a>
+                    <a class="btn secondary" target="_blank" href="https://code.earthengine.google.com/">
+                        Abrir Code Editor
+                    </a>
 
-                <a class="btn secondary" target="_blank" href="https://www.youtube.com/results?search_query=crear+cuenta+google+earth+engine">
-                    Ver tutorial en YouTube
-                </a>
+                    <a class="btn secondary" target="_blank" href="https://www.youtube.com/results?search_query=crear+cuenta+google+earth+engine">
+                        Ver tutorial en YouTube
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <h2>Herramientas complementarias</h2>
+            <div class="resource-section">
+                <h3>Herramientas complementarias</h3>
+                <p>
+                    Google Earth Engine puede integrarse con otras herramientas para ampliar capacidades de análisis, automatización, visualización e interoperabilidad geoespacial.
+                </p>
 
-            <p>
-                Google Earth Engine puede integrarse con otras herramientas para ampliar capacidades de análisis, automatización, visualización e interoperabilidad geoespacial.
-            </p>
-
-            <div class="tools">
-                <div class="tool">QGIS</div>
-                <div class="tool">Google Colab</div>
-                <div class="tool">geemap</div>
-                <div class="tool">Python</div>
-                <div class="tool">Dashboards WebGIS</div>
-                <div class="tool">IA aplicada a SIG</div>
+                <div class="tools">
+                    <div class="tool">QGIS</div>
+                    <div class="tool">Google Colab</div>
+                    <div class="tool">geemap</div>
+                    <div class="tool">Python</div>
+                    <div class="tool">Dashboards WebGIS</div>
+                    <div class="tool">IA aplicada a SIG</div>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <h2>Enlaces útiles</h2>
+            <div class="resource-section">
+                <h3>Enlaces útiles</h3>
 
-            <div class="buttons">
-                <a class="btn" target="_blank" href="https://code.earthengine.google.com/">
-                    Abrir Google Earth Engine
-                </a>
+                <div class="buttons">
+                    <a class="btn" target="_blank" href="https://code.earthengine.google.com/">
+                        Abrir Google Earth Engine
+                    </a>
 
-                <a class="btn secondary" target="_blank" href="https://www.snitcr.go.cr/">
-                    Portal SNIT Costa Rica
-                </a>
+                    <a class="btn secondary" target="_blank" href="https://www.snitcr.go.cr/">
+                        Portal SNIT Costa Rica
+                    </a>
 
-                <a class="btn secondary" target="_blank" href="https://qgis.org/">
-                    Descargar QGIS
-                </a>
+                    <a class="btn secondary" target="_blank" href="https://qgis.org/">
+                        Descargar QGIS
+                    </a>
+                </div>
             </div>
+
         </div>
 
     </section>
