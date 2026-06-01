@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Plataforma Google Earth Engine</title>
+<title>Monitoreo de Ecosistemas con Google Earth Engine</title>
 
 <style>
 *{
@@ -120,9 +120,7 @@ header h1{
 .info-block p,
 .info-block li,
 .resource-section p,
-.resource-section li,
-.card p,
-.card li{
+.card p{
     color:#475569;
     font-size:14.5px;
 }
@@ -164,7 +162,6 @@ header h1{
     border-radius:18px;
     padding:24px;
     color:#0f3b63;
-    font-weight:800;
     line-height:1.9;
     font-size:15.5px;
 }
@@ -222,12 +219,50 @@ header h1{
     background:#334155;
 }
 
+.tool-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:14px;
+}
+
+.tool-item{
+    background:#eef4fa;
+    color:#0f3b63;
+    padding:11px 14px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:800;
+    text-align:center;
+}
+
+.bottom-links{
+    background:#eaf2fb;
+    padding:18px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:24px;
+    border-top:1px solid #dbeafe;
+}
+
+.bottom-links a{
+    text-decoration:none;
+    color:#0f3b63;
+    font-size:14px;
+    font-weight:800;
+}
+
+.bottom-links a:hover{
+    color:#1f5b93;
+}
+
 footer{
     background:#0f3b63;
     color:white;
     text-align:center;
     padding:34px 20px;
-    margin-top:35px;
 }
 
 footer p{
@@ -256,6 +291,11 @@ footer p{
 
     .btn{
         display:inline-block;
+    }
+
+    .tool-list{
+        flex-direction:row;
+        flex-wrap:wrap;
     }
 
     header h1{
@@ -365,7 +405,7 @@ footer p{
                 <span>Bloque 2</span>
                 <h3>Integración de datos desde QGIS</h3>
                 <p>
-                    Conexión a servicios WFS del SNIT, selección de un área de interés y exportación en formato GeoJSON para su uso en Google Earth Engine.
+                    Conexión a servicios WFS del SNIT, selección de un área de interés y exportación para su uso en Google Earth Engine.
                 </p>
             </div>
 
@@ -415,13 +455,9 @@ footer p{
                 <br>
                 Preparación del área de interés en QGIS
                 <br>
-                Carga del GeoJSON en Google Earth Engine
-                <br>
-                Visualización de imágenes Sentinel-2
+                Carga en Google Earth Engine
                 <br>
                 Cálculo de NDVI
-                <br>
-                Comparación temporal
                 <br>
                 Exportación de resultados
 
@@ -432,19 +468,10 @@ footer p{
                     <div class="flow-step">QGIS</div>
                     <div class="arrow">→</div>
 
-                    <div class="flow-step">GeoJSON</div>
-                    <div class="arrow">→</div>
-
-                    <div class="flow-step">GEE</div>
-                    <div class="arrow">→</div>
-
-                    <div class="flow-step">Sentinel-2</div>
+                    <div class="flow-step">Google Earth Engine</div>
                     <div class="arrow">→</div>
 
                     <div class="flow-step">NDVI</div>
-                    <div class="arrow">→</div>
-
-                    <div class="flow-step">Cambio temporal</div>
                     <div class="arrow">→</div>
 
                     <div class="flow-step">Resultados</div>
@@ -457,7 +484,7 @@ footer p{
 
     <aside class="resources">
 
-        <h2>Recursos y herramientas</h2>
+        <h2>Preparación para el webinar</h2>
 
         <div class="resource-section">
             <h3>Acceso a Google Earth Engine</h3>
@@ -486,48 +513,13 @@ footer p{
                 Herramientas que pueden ampliar el análisis, automatización e interoperabilidad geoespacial.
             </p>
 
-            <div class="buttons">
-                <a class="btn secondary" target="_blank" href="https://qgis.org/">
-                    QGIS
-                </a>
-
-                <a class="btn secondary" target="_blank" href="https://colab.research.google.com/">
-                    Google Colab
-                </a>
-
-                <a class="btn secondary" target="_blank" href="https://geemap.org/">
-                    geemap
-                </a>
-
-                <a class="btn secondary" target="_blank" href="https://www.python.org/">
-                    Python
-                </a>
-
-                <a class="btn secondary" target="_blank" href="https://leafletjs.com/">
-                    WebGIS
-                </a>
-
-                <a class="btn secondary" target="_blank" href="https://chatgpt.com/">
-                    IA aplicada a SIG
-                </a>
-            </div>
-        </div>
-
-        <div class="resource-section">
-            <h3>Enlaces útiles</h3>
-
-            <div class="buttons">
-                <a class="btn" target="_blank" href="https://code.earthengine.google.com/">
-                    Abrir GEE
-                </a>
-
-                <a class="btn secondary" target="_blank" href="https://www.snitcr.go.cr/">
-                    SNIT Costa Rica
-                </a>
-
-                <a class="btn secondary" target="_blank" href="https://qgis.org/">
-                    Descargar QGIS
-                </a>
+            <div class="tool-list">
+                <div class="tool-item">QGIS</div>
+                <div class="tool-item">Google Colab</div>
+                <div class="tool-item">geemap</div>
+                <div class="tool-item">Python</div>
+                <div class="tool-item">Leaflet WebGIS</div>
+                <div class="tool-item">IA aplicada a SIG</div>
             </div>
         </div>
 
@@ -535,10 +527,38 @@ footer p{
 
 </main>
 
+<section class="bottom-links">
+
+    <a target="_blank" href="https://code.earthengine.google.com/">
+        Google Earth Engine
+    </a>
+
+    <a target="_blank" href="https://www.snitcr.go.cr/">
+        SNIT Costa Rica
+    </a>
+
+    <a target="_blank" href="https://qgis.org/">
+        QGIS
+    </a>
+
+    <a target="_blank" href="https://colab.research.google.com/">
+        Google Colab
+    </a>
+
+    <a target="_blank" href="https://geemap.org/">
+        geemap
+    </a>
+
+    <a target="_blank" href="https://www.python.org/">
+        Python
+    </a>
+
+    
+</section>
+
 <footer>
     <p>GEE Cloud Webinar</p>
     <p>Desarrollado por Grettel Vargas Azofeifa</p>
-    
 </footer>
 
 </body>
