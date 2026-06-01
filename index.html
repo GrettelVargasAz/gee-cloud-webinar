@@ -1,2 +1,414 @@
-<img src="assets/fao_logo.png" alt="FAO">
-<img src="assets/gee_logo.png" alt="Google Earth Engine">
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Procesamiento Geoespacial en la Nube con Google Earth Engine</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI', Arial, sans-serif;
+    background:#f4f7fb;
+    color:#334155;
+    line-height:1.7;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#0f3b63,#1f5b93);
+    color:white;
+    padding:50px 20px;
+    text-align:center;
+}
+
+.logos{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.logos img{
+    max-height:70px;
+    width:auto;
+    background:white;
+    padding:8px;
+    border-radius:12px;
+}
+
+h1{
+    font-size:2.6rem;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    max-width:900px;
+    margin:auto;
+    font-size:1.1rem;
+    color:#dbeafe;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 18px;
+    background:rgba(255,255,255,0.15);
+    border-radius:50px;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* CONTENEDOR */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    margin-bottom:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.card h2{
+    color:#0f3b63;
+    margin-bottom:15px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+/* FLUJO */
+
+.flow{
+    background:#eef6ff;
+    border-left:6px solid #1f5b93;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    font-weight:bold;
+    color:#0f3b63;
+    font-size:1.1rem;
+}
+
+/* AGENDA */
+
+.agenda-item{
+    border-left:5px solid #1f5b93;
+    padding-left:20px;
+    margin-bottom:25px;
+}
+
+.agenda-item h3{
+    color:#0f3b63;
+    margin-bottom:10px;
+}
+
+.agenda-item p{
+    color:#475569;
+}
+
+/* BOTONES */
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:20px;
+}
+
+.btn{
+    background:#1f5b93;
+    color:white;
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:10px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#0f3b63;
+}
+
+/* FOOTER */
+
+footer{
+    background:#0f3b63;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:40px;
+}
+
+footer p{
+    color:#dbeafe;
+}
+
+@media(max-width:768px){
+
+h1{
+    font-size:2rem;
+}
+
+.logos{
+    gap:20px;
+}
+
+.logos img{
+    max-height:55px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logos">
+
+    <!-- AJUSTAR NOMBRE EXACTO DEL ARCHIVO -->
+    <img src="assets/fao_logo.png" alt="FAO">
+
+    <!-- AJUSTAR NOMBRE EXACTO DEL ARCHIVO -->
+    <img src="assets/gee_logo.png" alt="Google Earth Engine">
+
+</div>
+
+<h1>
+Procesamiento Geoespacial en la Nube
+con Google Earth Engine
+</h1>
+
+<p class="subtitle">
+Aplicaciones para agricultura, monitoreo ambiental y gestión territorial mediante análisis satelital y procesamiento geoespacial en la nube.
+</p>
+
+<div class="badge">
+Webinar introductorio · FAO · Ministerio de Agricultura y Ganadería de Costa Rica
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Descripción</h2>
+
+<p>
+Este webinar introduce los conceptos fundamentales del procesamiento geoespacial en la nube utilizando Google Earth Engine. Los participantes aprenderán a integrar información geoespacial nacional, visualizar imágenes satelitales y realizar análisis básicos de vegetación mediante índices espectrales.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Objetivo</h2>
+
+<p>
+Introducir a los participantes en el uso de Google Earth Engine para el análisis y procesamiento de información geoespacial en la nube, utilizando datos nacionales y herramientas de uso cotidiano en los flujos de trabajo institucionales.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h2>Dirigido a</h2>
+
+<p>
+Personal técnico del MAG, profesionales SIG, extensionistas agrícolas, especialistas ambientales, estudiantes y usuarios interesados en monitoreo territorial y análisis geoespacial.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Requisitos previos</h2>
+
+<ul>
+<li>Cuenta de Google activa.</li>
+<li>Acceso habilitado a Google Earth Engine.</li>
+<li>QGIS instalado.</li>
+<li>Conexión estable a Internet.</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Flujo del ejercicio práctico</h2>
+
+<div class="flow">
+
+SNIT Costa Rica (WFS)
+<br>↓<br>
+QGIS
+<br>↓<br>
+GeoJSON
+<br>↓<br>
+Google Earth Engine
+<br>↓<br>
+Sentinel-2
+<br>↓<br>
+NDVI
+<br>↓<br>
+Resultados
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Agenda del Webinar</h2>
+
+<div class="agenda-item">
+
+<h3>1. Introducción al procesamiento geoespacial en la nube</h3>
+
+<p>
+Conceptos básicos de computación en la nube, Google Earth Engine y aplicaciones para agricultura, monitoreo ambiental y gestión territorial.
+</p>
+
+</div>
+
+<div class="agenda-item">
+
+<h3>2. Integración de datos geoespaciales desde QGIS</h3>
+
+<p>
+Conexión a servicios WFS del SNIT, visualización de capas, selección de un área de interés y exportación en formato GeoJSON.
+</p>
+
+</div>
+
+<div class="agenda-item">
+
+<h3>3. Introducción a Google Earth Engine</h3>
+
+<p>
+Interfaz de usuario, catálogo de datos disponibles, Sentinel-2, Landsat, CHIRPS y exploración de imágenes satelitales.
+</p>
+
+</div>
+
+<div class="agenda-item">
+
+<h3>4. Análisis satelital básico</h3>
+
+<p>
+Carga del área de interés, filtrado de imágenes Sentinel-2, composición RGB, cálculo de NDVI e interpretación de resultados.
+</p>
+
+</div>
+
+<div class="agenda-item">
+
+<h3>5. Exportación de resultados y recursos disponibles</h3>
+
+<p>
+Exportación de imágenes y tablas, recursos de aprendizaje y breve presentación de herramientas complementarias para integración geoespacial.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Herramientas complementarias</h2>
+
+<p>
+Google Earth Engine forma parte de un ecosistema más amplio de herramientas que permiten ampliar capacidades de análisis, automatización e interoperabilidad geoespacial.
+</p>
+
+<br>
+
+<ul>
+<li>QGIS</li>
+<li>Google Colab</li>
+<li>geemap</li>
+<li>Python</li>
+<li>Dashboards WebGIS</li>
+<li>Inteligencia Artificial aplicada a SIG</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Enlaces útiles</h2>
+
+<div class="buttons">
+
+<a class="btn" target="_blank"
+href="https://code.earthengine.google.com/">
+Abrir Google Earth Engine
+</a>
+
+<a class="btn" target="_blank"
+href="https://earthengine.google.com/">
+Solicitar acceso a GEE
+</a>
+
+<a class="btn" target="_blank"
+href="https://www.snitcr.go.cr/">
+Portal SNIT Costa Rica
+</a>
+
+<a class="btn" target="_blank"
+href="https://qgis.org/">
+Descargar QGIS
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<h3>GEE Cloud Webinar</h3>
+
+<p>
+Introducción al procesamiento geoespacial en la nube con Google Earth Engine
+</p>
+
+<p>
+FAO · Ministerio de Agricultura y Ganadería de Costa Rica
+</p>
+
+</footer>
+
+</body>
+</html>
