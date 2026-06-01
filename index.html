@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Google Earth Engine para Monitoreo Territorial</title>
+<title>Plataforma Google Earth Engine</title>
 
 <style>
 *{
@@ -222,23 +222,6 @@ header h1{
     background:#334155;
 }
 
-.tools{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:10px;
-    margin-top:14px;
-}
-
-.tool{
-    background:#eef4fa;
-    color:#0f3b63;
-    padding:11px 14px;
-    border-radius:999px;
-    font-size:13px;
-    font-weight:800;
-    text-align:center;
-}
-
 footer{
     background:#0f3b63;
     color:white;
@@ -273,10 +256,6 @@ footer p{
 
     .btn{
         display:inline-block;
-    }
-
-    .tools{
-        grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
     }
 
     header h1{
@@ -314,10 +293,14 @@ footer p{
 
             <h1>
                 Google Earth Engine<br>
-                Aplicaciones para agricultura, restauración y gestión ambiental 
+                
             </h1>
 
-            </div>
+            <p class="subtitle">
+                Aplicaciones para agricultura y gestión ambiental
+            </p>
+
+        </div>
 
         <img src="assets/gee_logo.png" alt="Google Earth Engine" class="hero-logo">
 
@@ -329,7 +312,7 @@ footer p{
 
     <aside class="sidebar">
 
-        <h2>Información del webinar</h2>
+        <h2>Información general</h2>
 
         <div class="info-block">
             <h3>Descripción</h3>
@@ -341,14 +324,14 @@ footer p{
         <div class="info-block">
             <h3>Objetivo</h3>
             <p>
-                Introducir a los participantes en el uso de Google Earth Engine para visualizar, analizar y procesar información geoespacial aplicada a agricultura, monitoreo ambiental y gestión territorial.
+                Introducir a los participantes en el uso de Google Earth Engine para visualizar, analizar y procesar información geoespacial aplicada a agricultura, restauración y monitoreo de ecosistemas.
             </p>
         </div>
 
         <div class="info-block">
             <h3>Dirigido a</h3>
             <p>
-                Personal técnico, profesionales SIG, extensionistas agrícolas, especialistas ambientales, estudiantes y personas vinculadas al análisis territorial.
+                Personal técnico nacional, profesionales SIG, extensionistas agrícolas, especialistas ambientales, estudiantes y personas vinculadas al análisis territorial y ambiental.
             </p>
         </div>
 
@@ -372,47 +355,55 @@ footer p{
 
             <div class="agenda-item">
                 <span>Bloque 1</span>
-                <h3>Introducción al procesamiento geoespacial en la nube</h3>
+                <h3>Introducción a Google Earth Engine</h3>
                 <p>
-                    Conceptos básicos de computación en la nube, Google Earth Engine y aplicaciones para agricultura, monitoreo ambiental y gestión territorial.
+                    ¿Qué es Google Earth Engine, cuáles son las ventajas del procesamiento geoespacial en la nube y cómo puede aplicarse en agricultura, restauración y monitoreo ambiental?
                 </p>
             </div>
 
             <div class="agenda-item">
                 <span>Bloque 2</span>
-                <h3>Integración de datos geoespaciales desde QGIS</h3>
+                <h3>Integración de datos desde QGIS</h3>
                 <p>
-                    Conexión a servicios WFS del SNIT, visualización de capas, selección de un área de interés y exportación en formato GeoJSON.
+                    Conexión a servicios WFS del SNIT, selección de un área de interés y exportación en formato GeoJSON para su uso en Google Earth Engine.
                 </p>
             </div>
 
             <div class="agenda-item">
                 <span>Bloque 3</span>
-                <h3>Introducción a Google Earth Engine</h3>
+                <h3>Exploración de imágenes Sentinel-2</h3>
                 <p>
-                    Revisión de la interfaz, catálogo de datos disponibles, Sentinel-2, Landsat, CHIRPS y exploración inicial de imágenes satelitales.
+                    Carga del área de interés, filtrado de imágenes, visualización RGB y exploración del catálogo de datos de Earth Engine.
                 </p>
             </div>
 
             <div class="agenda-item">
                 <span>Bloque 4</span>
-                <h3>Análisis satelital básico</h3>
+                <h3>NDVI para monitoreo de ecosistemas</h3>
                 <p>
-                    Carga del área de interés, filtrado de imágenes Sentinel-2, composición RGB, cálculo de NDVI e interpretación de resultados.
+                    Cálculo e interpretación del índice de vegetación NDVI para identificar cambios en cobertura, vigor vegetal y estado de la vegetación.
                 </p>
             </div>
 
             <div class="agenda-item">
                 <span>Bloque 5</span>
-                <h3>Exportación de resultados y recursos disponibles</h3>
+                <h3>Comparación temporal y detección de cambios</h3>
                 <p>
-                    Exportación de imágenes y tablas, recursos de aprendizaje y breve mención de herramientas complementarias de integración geoespacial.
+                    Comparación de imágenes de diferentes fechas para observar tendencias y cambios en la vegetación.
+                </p>
+            </div>
+
+            <div class="agenda-item">
+                <span>Bloque 6</span>
+                <h3>Exportación de resultados</h3>
+                <p>
+                    Exportación de mapas e información para su uso en QGIS y otros entornos de análisis.
                 </p>
             </div>
         </div>
 
         <div class="card">
-            <h2>Caso práctico del webinar</h2>
+            <h2>Ejercicio práctico</h2>
 
             <p>
                 Durante la sesión se desarrollará un ejercicio aplicado que conecta datos nacionales con análisis satelital en la nube.
@@ -426,24 +417,37 @@ footer p{
                 <br>
                 Carga del GeoJSON en Google Earth Engine
                 <br>
-                Análisis de imágenes Sentinel-2
+                Visualización de imágenes Sentinel-2
                 <br>
                 Cálculo de NDVI
                 <br>
-                Visualización y exportación de resultados
+                Comparación temporal
+                <br>
+                Exportación de resultados
 
                 <div class="flow-line">
                     <div class="flow-step">SNIT</div>
                     <div class="arrow">→</div>
+
                     <div class="flow-step">QGIS</div>
                     <div class="arrow">→</div>
+
                     <div class="flow-step">GeoJSON</div>
                     <div class="arrow">→</div>
+
                     <div class="flow-step">GEE</div>
                     <div class="arrow">→</div>
+
                     <div class="flow-step">Sentinel-2</div>
                     <div class="arrow">→</div>
+
                     <div class="flow-step">NDVI</div>
+                    <div class="arrow">→</div>
+
+                    <div class="flow-step">Cambio temporal</div>
+                    <div class="arrow">→</div>
+
+                    <div class="flow-step">Resultados</div>
                 </div>
 
             </div>
@@ -453,7 +457,7 @@ footer p{
 
     <aside class="resources">
 
-        <h2>Recursos del webinar</h2>
+        <h2>Recursos y herramientas</h2>
 
         <div class="resource-section">
             <h3>Acceso a Google Earth Engine</h3>
@@ -479,16 +483,33 @@ footer p{
         <div class="resource-section">
             <h3>Herramientas complementarias</h3>
             <p>
-                Herramientas que pueden ampliar el análisis, automatización e interoperabilidad.
+                Herramientas que pueden ampliar el análisis, automatización e interoperabilidad geoespacial.
             </p>
 
-            <div class="tools">
-                <div class="tool">QGIS</div>
-                <div class="tool">Google Colab</div>
-                <div class="tool">geemap</div>
-                <div class="tool">Python</div>
-                <div class="tool">Dashboards WebGIS</div>
-                <div class="tool">IA aplicada a SIG</div>
+            <div class="buttons">
+                <a class="btn secondary" target="_blank" href="https://qgis.org/">
+                    QGIS
+                </a>
+
+                <a class="btn secondary" target="_blank" href="https://colab.research.google.com/">
+                    Google Colab
+                </a>
+
+                <a class="btn secondary" target="_blank" href="https://geemap.org/">
+                    geemap
+                </a>
+
+                <a class="btn secondary" target="_blank" href="https://www.python.org/">
+                    Python
+                </a>
+
+                <a class="btn secondary" target="_blank" href="https://leafletjs.com/">
+                    WebGIS
+                </a>
+
+                <a class="btn secondary" target="_blank" href="https://chatgpt.com/">
+                    IA aplicada a SIG
+                </a>
             </div>
         </div>
 
@@ -505,7 +526,7 @@ footer p{
                 </a>
 
                 <a class="btn secondary" target="_blank" href="https://qgis.org/">
-                    QGIS
+                    Descargar QGIS
                 </a>
             </div>
         </div>
@@ -516,8 +537,8 @@ footer p{
 
 <footer>
     <p>GEE Cloud Webinar</p>
-    <p>Introducción al procesamiento geoespacial en la nube con Google Earth Engine</p>
-    <p>FAO · Ministerio de Agricultura y Ganadería de Costa Rica</p>
+    <p>Desarrollado por Grettel Vargas Azofeifa</p>
+    
 </footer>
 
 </body>
