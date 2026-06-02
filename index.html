@@ -242,9 +242,10 @@ h1{
 .btn,
 .btn.secondary{
     display:block;
-    text-align:left;
+    width:100%;
+    text-align:center;
     background:var(--gray-soft);
-    color:var(--blue-dark);
+    color:#334155;
     border:1px solid var(--gray-border);
     text-decoration:none;
     padding:12px 16px;
@@ -259,6 +260,7 @@ h1{
 .btn.secondary:hover{
     background:#eef4fa;
     color:var(--blue-dark);
+    border-color:#dbeafe;
     transform:none;
     box-shadow:none;
 }
@@ -346,7 +348,8 @@ footer p{
 
     .btn{
         display:inline-block;
-        text-align:center;
+        width:auto;
+        min-width:160px;
     }
 
     .tool-list{
