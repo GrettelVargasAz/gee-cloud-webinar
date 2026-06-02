@@ -3,28 +3,586 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Google Earth Engine</title>
+
 <style>
-body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:#f4f7fb;color:#1e293b}
-header{background:linear-gradient(135deg,#0f3b63,#1f5b93);color:white;padding:80px 30px 120px;text-align:center}
-.hero-header{display:flex;align-items:center;justify-content:center;gap:50px;flex-wrap:wrap}
-.hero-logo{max-height:90px;background:white;padding:12px 16px;border-radius:18px}
-.badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:8px 18px;border-radius:999px;font-size:13px;font-weight:600;margin-bottom:20px}
-h1{font-size:56px;line-height:1.15;margin-bottom:12px;font-weight:750}
-.subtitle{font-size:22px;color:#dbeafe;opacity:.95}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --blue-dark:#0f3b63;
+    --blue-main:#1f5b93;
+    --blue-soft:#eaf2fb;
+    --blue-soft-2:#f8fbff;
+    --gray-bg:#f4f7fb;
+    --gray-card:#ffffff;
+    --gray-soft:#f8fafc;
+    --gray-border:#e2e8f0;
+    --gray-border-soft:#edf2f7;
+    --text-main:#1e293b;
+    --text-muted:#64748b;
+    --text-soft:#94a3b8;
+}
+
+body{
+    font-family:"Segoe UI", Arial, sans-serif;
+    background:var(--gray-bg);
+    color:var(--text-main);
+    line-height:1.7;
+}
+
+header{
+    background:linear-gradient(135deg,var(--blue-dark),var(--blue-main));
+    color:white;
+    padding:80px 30px 120px;
+    text-align:center;
+}
+
+.hero-header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.hero-logo{
+    max-height:90px;
+    width:auto;
+    background:white;
+    padding:12px 16px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.16);
+}
+
+.hero-title{
+    max-width:780px;
+}
+
+.badge{
+    display:inline-block;
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.22);
+    padding:8px 18px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:46px;
+    line-height:1.15;
+    margin-bottom:16px;
+    font-weight:750;
+}
+
+.subtitle{
+    font-size:18px;
+    color:#dbeafe;
+}
+
+.main-wrapper{
+    max-width:1500px;
+    margin:auto;
+    padding:45px 24px;
+    display:grid;
+    grid-template-columns:28% 44% 28%;
+    gap:24px;
+    align-items:start;
+}
+
+.sidebar,
+.resources,
+.card{
+    background:var(--gray-card);
+    border-radius:24px;
+    box-shadow:0 14px 35px rgba(15,23,42,.07);
+    border:1px solid var(--gray-border);
+}
+
+.sidebar,
+.resources{
+    padding:30px;
+    margin-top:-95px;
+    position:sticky;
+    top:22px;
+}
+
+.content{
+    margin-top:-95px;
+}
+
+.sidebar h2,
+.resources h2,
+.card h2{
+    color:var(--blue-dark);
+    font-size:25px;
+    margin-bottom:20px;
+    line-height:1.25;
+}
+
+.info-block,
+.resource-section{
+    margin-bottom:24px;
+}
+
+.info-block h3,
+.resource-section h3{
+    color:var(--blue-main);
+    font-size:17px;
+    margin-bottom:8px;
+    font-weight:700;
+}
+
+.info-block p,
+.info-block li,
+.resource-section p,
+.card p{
+    color:#475569;
+    font-size:14.5px;
+}
+
+.info-block ul{
+    margin-left:18px;
+}
+
+.card{
+    padding:30px;
+    margin-bottom:24px;
+}
+
+.case-intro{
+    color:#475569;
+    font-size:15px;
+    margin-bottom:18px;
+}
+
+.case-flow{
+    background:var(--blue-soft-2);
+    border-left:4px solid #bfd7f3;
+    border-radius:18px;
+    padding:24px;
+    color:#334155;
+    line-height:1.9;
+    font-size:15.5px;
+}
+
+.flow-line{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:10px;
+    margin-top:18px;
+}
+
+.flow-step{
+    background:var(--gray-soft);
+    border:1px solid var(--gray-border);
+    border-radius:999px;
+    padding:10px 14px;
+    font-size:13px;
+    color:#334155;
+    font-weight:600;
+}
+
+.arrow{
+    color:var(--text-soft);
+    font-weight:700;
+}
+
+.agenda-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:14px;
+}
+
+.agenda-item{
+    padding:18px;
+    border-radius:18px;
+    background:#fcfdff;
+    border:1px solid var(--gray-border-soft);
+}
+
+.agenda-item span{
+    color:var(--text-soft);
+    font-size:11px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.8px;
+    margin-bottom:6px;
+    display:inline-block;
+}
+
+.agenda-item h3{
+    color:var(--blue-dark);
+    font-size:16.5px;
+    font-weight:700;
+    margin-bottom:7px;
+    line-height:1.35;
+}
+
+.agenda-item p{
+    color:var(--text-muted);
+    font-size:13.8px;
+    line-height:1.55;
+}
+
+.buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:16px;
+}
+
+.btn,
+.btn.secondary{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:var(--gray-soft);
+    color:#334155;
+    border:1px solid var(--gray-border);
+    text-decoration:none;
+    padding:12px 16px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:13.5px;
+    box-shadow:none;
+    transition:all .25s ease;
+}
+
+.btn:hover,
+.btn.secondary:hover{
+    background:#eef4fa;
+    color:var(--blue-dark);
+    border-color:#dbeafe;
+    transform:none;
+    box-shadow:none;
+}
+
+.tool-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:14px;
+}
+
+.tool-item{
+    display:block;
+    background:var(--gray-soft);
+    color:#334155;
+    padding:12px 16px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+    text-align:center;
+    text-decoration:none;
+    transition:all .25s ease;
+    border:1px solid var(--gray-border);
+}
+
+.tool-item:hover{
+    background:#eef4fa;
+    color:var(--blue-dark);
+    transform:none;
+    box-shadow:none;
+}
+
+.reference-box{
+    background:#fcfdff;
+    border:1px solid var(--gray-border-soft);
+    border-radius:18px;
+    padding:20px;
+    margin-top:8px;
+}
+
+.reference-title{
+    color:var(--blue-dark);
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.reference-text{
+    color:var(--text-muted);
+    font-size:13.8px;
+    line-height:1.55;
+}
+
+footer{
+    background:var(--blue-dark);
+    color:white;
+    text-align:center;
+    padding:34px 20px;
+    margin-top:35px;
+}
+
+footer p{
+    color:#dbeafe;
+    font-size:14px;
+    margin:6px 0;
+}
+
+@media(max-width:1100px){
+    .main-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar,
+    .resources,
+    .content{
+        margin-top:0;
+        position:relative;
+        top:0;
+    }
+
+    .buttons{
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+
+    .btn{
+        display:inline-block;
+        width:auto;
+        min-width:160px;
+    }
+
+    .tool-list{
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+
+    .agenda-grid{
+        grid-template-columns:1fr;
+    }
+
+    h1{
+        font-size:34px;
+    }
+}
+
+@media(max-width:600px){
+    header{
+        padding:55px 20px 70px;
+    }
+
+    .hero-logo{
+        max-height:60px;
+    }
+
+    .sidebar,
+    .resources,
+    .card{
+        padding:24px;
+    }
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<div class="hero-header">
-<img src="assets/fao_logo.png" alt="FAO" class="hero-logo">
-<div>
-<div class="badge">FAO • MAG Costa Rica · Webinar introductorio</div>
-<h1>Aplicaciones para agricultura y gestión ambiental</h1>
-<p class="subtitle">con Google Earth Engine</p>
-</div>
-<img src="assets/gee_logo.png" alt="GEE" class="hero-logo">
-</div>
+    <div class="hero-header">
+
+        <img src="assets/fao_logo.png" alt="FAO" class="hero-logo">
+
+        <div class="hero-title">
+            <div class="badge">Webinar introductorio · FAO · MAG Costa Rica</div>
+
+            <h1>Google Earth Engine</h1>
+
+            <p class="subtitle">
+                Procesamiento geoespacial en la nube para agricultura y gestión ambiental
+            </p>
+        </div>
+
+        <img src="assets/gee_logo.png" alt="Google Earth Engine" class="hero-logo">
+
+    </div>
 </header>
+
+<main class="main-wrapper">
+
+    <aside class="sidebar">
+
+        <h2>Información general</h2>
+
+        <div class="info-block">
+            <h3>Descripción</h3>
+            <p>
+                Este webinar introduce los conceptos fundamentales del procesamiento geoespacial en la nube utilizando Google Earth Engine, integrando datos nacionales, QGIS y análisis satelital básico.
+            </p>
+        </div>
+
+        <div class="info-block">
+            <h3>Objetivo</h3>
+            <p>
+                Introducir a los participantes en el uso de Google Earth Engine para visualizar, analizar y procesar información geoespacial aplicada a agricultura, restauración y monitoreo ambiental.
+            </p>
+        </div>
+
+        <div class="info-block">
+            <h3>Dirigido a</h3>
+            <p>
+                Personal técnico nacional, profesionales SIG, extensionistas agrícolas, especialistas ambientales, estudiantes y personas vinculadas al análisis territorial y ambiental.
+            </p>
+        </div>
+
+        <div class="info-block">
+            <h3>Requisitos previos</h3>
+            <ul>
+                <li>Cuenta de Google activa.</li>
+                <li>Acceso aprobado a Google Earth Engine.</li>
+                <li>Ingreso previo al Code Editor.</li>
+                <li>QGIS instalado.</li>
+                <li>Conexión estable a Internet.</li>
+            </ul>
+        </div>
+
+    </aside>
+
+    <section class="content">
+
+        <div class="card">
+            <h2>Caso práctico del webinar</h2>
+
+            <p class="case-intro">
+                La sesión se centra en un ejercicio aplicado que conecta datos nacionales con análisis satelital en la nube.
+            </p>
+
+            <div class="case-flow">
+                Datos nacionales del SNIT<br>
+                Preparación del área de interés en QGIS<br>
+                Carga en Google Earth Engine<br>
+                Cálculo de NDVI<br>
+                Exportación de resultados
+
+                <div class="flow-line">
+                    <div class="flow-step">SNIT</div>
+                    <div class="arrow">→</div>
+                    <div class="flow-step">QGIS</div>
+                    <div class="arrow">→</div>
+                    <div class="flow-step">Google Earth Engine</div>
+                    <div class="arrow">→</div>
+                    <div class="flow-step">NDVI</div>
+                    <div class="arrow">→</div>
+                    <div class="flow-step">Resultados</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Agenda del webinar</h2>
+
+            <div class="agenda-grid">
+
+                <div class="agenda-item">
+                    <span>Bloque 1</span>
+                    <h3>Introducción a Google Earth Engine</h3>
+                    <p>
+                        Conceptos clave, ventajas del procesamiento en la nube y aplicaciones en agricultura y gestión ambiental.
+                    </p>
+                </div>
+
+                <div class="agenda-item">
+                    <span>Bloque 2</span>
+                    <h3>Integración de datos desde QGIS</h3>
+                    <p>
+                        Conexión a servicios WFS del SNIT, selección de un área de interés y preparación de datos.
+                    </p>
+                </div>
+
+                <div class="agenda-item">
+                    <span>Bloque 3</span>
+                    <h3>Exploración de imágenes Sentinel-2</h3>
+                    <p>
+                        Carga del área de interés, filtrado de imágenes y visualización RGB.
+                    </p>
+                </div>
+
+                <div class="agenda-item">
+                    <span>Bloque 4</span>
+                    <h3>Análisis de vegetación mediante NDVI</h3>
+                    <p>
+                        Cálculo e interpretación del NDVI para evaluar cobertura vegetal, cultivos, áreas forestales y cambios en el paisaje.
+                    </p>
+                </div>
+
+                <div class="agenda-item">
+                    <span>Bloque 5</span>
+                    <h3>Análisis temporal y detección de cambios</h3>
+                    <p>
+                        Comparación de imágenes para identificar tendencias y cambios en la vegetación y el territorio.
+                    </p>
+                </div>
+
+                <div class="agenda-item">
+                    <span>Bloque 6</span>
+                    <h3>Exportación de resultados</h3>
+                    <p>
+                        Exportación de mapas e información para su uso en QGIS y otros entornos de análisis.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <aside class="resources">
+
+        <h2>Preparación previa</h2>
+
+        <div class="resource-section">
+            <h3>Acceso a Google Earth Engine</h3>
+            <p>
+                Verifique previamente que su cuenta tenga acceso habilitado y que pueda ingresar al Code Editor.
+            </p>
+
+            <div class="buttons">
+                <a class="btn" target="_blank" href="https://earthengine.google.com/">Solicitar acceso</a>
+                <a class="btn secondary" target="_blank" href="https://code.earthengine.google.com/">Abrir Code Editor</a>
+                <a class="btn secondary" target="_blank" href="https://www.youtube.com/results?search_query=crear+cuenta+google+earth+engine">Ver tutorial en YouTube</a>
+            </div>
+        </div>
+
+        <div class="resource-section">
+            <h3>Accesos y herramientas recomendadas</h3>
+            <p>
+                Accesos de referencia para preparar el entorno, explorar datos nacionales y ampliar el análisis geoespacial.
+            </p>
+
+            <div class="tool-list">
+                <a class="tool-item" href="https://code.earthengine.google.com/" target="_blank">Google Earth Engine</a>
+                <a class="tool-item" href="https://www.snitcr.go.cr/" target="_blank">SNIT Costa Rica</a>
+                <a class="tool-item" href="https://qgis.org/" target="_blank">QGIS</a>
+                <a class="tool-item" href="https://colab.research.google.com/" target="_blank">Google Colab</a>
+                <a class="tool-item" href="https://geemap.org/" target="_blank">geemap</a>
+                <a class="tool-item" href="https://www.python.org/" target="_blank">Python</a>
+            </div>
+        </div>
+
+        <div class="reference-box">
+            <div class="reference-title">Nota</div>
+            <p class="reference-text">
+                Google Colab, geemap y Python se mencionan como herramientas complementarias para futuros flujos de automatización, no como contenidos centrales de esta sesión introductoria.
+            </p>
+        </div>
+
+    </aside>
+
+</main>
+
+<footer>
+    <p><strong>GEE Cloud Webinar</strong></p>
+    <p>Google Earth Engine para agricultura y gestión ambiental</p>
+    <p>Desarrollado por Grettel Vargas Azofeifa</p>
+</footer>
+
 </body>
 </html>
