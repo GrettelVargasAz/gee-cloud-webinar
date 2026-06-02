@@ -3,13 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Google Earth Engine</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
-    font-family:"Segoe UI",Arial,sans-serif;
+    font-family:"Segoe UI", Arial, sans-serif;
     background:#f4f7fb;
     color:#1e293b;
     line-height:1.7;
@@ -39,7 +44,9 @@ header{
     box-shadow:0 10px 25px rgba(0,0,0,.18);
 }
 
-.hero-title{max-width:780px}
+.hero-title{
+    max-width:780px;
+}
 
 .badge{
     display:inline-block;
@@ -73,71 +80,68 @@ h1{
     align-items:start;
 }
 
-.sidebar,.resources,.card{
+.sidebar,
+.resources,
+.card{
     background:white;
     border-radius:24px;
     box-shadow:0 14px 35px rgba(15,23,42,.08);
     border:1px solid #e2e8f0;
 }
 
-.sidebar,.resources{
+.sidebar,
+.resources{
     padding:30px;
     margin-top:-95px;
     position:sticky;
     top:22px;
 }
 
-.content{margin-top:-95px}
+.content{
+    margin-top:-95px;
+}
 
-.sidebar h2,.resources h2,.card h2{
+.sidebar h2,
+.resources h2,
+.card h2{
     color:#0f3b63;
     font-size:25px;
     margin-bottom:20px;
 }
 
-.info-block,.resource-section{margin-bottom:24px}
+.info-block,
+.resource-section{
+    margin-bottom:24px;
+}
 
-.info-block h3,.resource-section h3{
+.info-block h3,
+.resource-section h3{
     color:#1f5b93;
     font-size:17px;
     margin-bottom:8px;
 }
 
-.info-block p,.info-block li,.resource-section p,.card p{
+.info-block p,
+.info-block li,
+.resource-section p,
+.card p{
     color:#475569;
     font-size:14.5px;
 }
 
-.info-block ul{margin-left:18px}
+.info-block ul{
+    margin-left:18px;
+}
 
 .card{
     padding:30px;
     margin-bottom:24px;
 }
 
-.agenda-item{
-    padding:22px;
-    border-radius:18px;
-    background:#f8fafc;
-    border:1px solid #e2e8f0;
-    margin-bottom:16px;
-}
-
-.agenda-item span{
-    color:#94a3b8;
-    font-size:11px;
-    font-weight:600;
-    text-transform:uppercase;
-    letter-spacing:.8px;
-    margin-bottom:8px;
-    display:inline-block;
-}
-
-.agenda-item h3{
-    color:#0f3b63;
-    font-size:18px;
-    font-weight:700;
-    margin-bottom:8px;
+.case-intro{
+    color:#475569;
+    font-size:15px;
+    margin-bottom:18px;
 }
 
 .case-flow{
@@ -173,6 +177,43 @@ h1{
     font-weight:700;
 }
 
+.agenda-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:14px;
+}
+
+.agenda-item{
+    padding:18px;
+    border-radius:18px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+}
+
+.agenda-item span{
+    color:#94a3b8;
+    font-size:11px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.8px;
+    margin-bottom:6px;
+    display:inline-block;
+}
+
+.agenda-item h3{
+    color:#0f3b63;
+    font-size:16.5px;
+    font-weight:700;
+    margin-bottom:7px;
+    line-height:1.35;
+}
+
+.agenda-item p{
+    color:#64748b;
+    font-size:13.8px;
+    line-height:1.55;
+}
+
 .buttons{
     display:flex;
     flex-direction:column;
@@ -199,7 +240,9 @@ h1{
     transform:translateY(-2px);
 }
 
-.btn.secondary{background:#334155}
+.btn.secondary{
+    background:#334155;
+}
 
 .tool-list{
     display:flex;
@@ -229,41 +272,34 @@ h1{
     box-shadow:0 8px 20px rgba(31,91,147,.20);
 }
 
-.links-title{
-    background:#eaf2fb;
-    text-align:center;
-    padding:18px 20px 6px;
-    font-size:18px;
-    font-weight:700;
+.reference-box{
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:18px;
+    padding:20px;
+    margin-top:8px;
+}
+
+.reference-title{
     color:#0f3b63;
-    letter-spacing:.3px;
-}
-
-.bottom-links{
-    background:#eaf2fb;
-    padding:12px 20px 22px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:24px;
-    border-top:1px solid #dbeafe;
-}
-
-.bottom-links a{
-    text-decoration:none;
-    color:#0f3b63;
-    font-size:14px;
+    font-size:16px;
     font-weight:700;
+    margin-bottom:10px;
 }
 
-.bottom-links a:hover{color:#1f5b93}
+.reference-text{
+    color:#64748b;
+    font-size:13.8px;
+    line-height:1.55;
+    margin-bottom:12px;
+}
 
 footer{
     background:#0f3b63;
     color:white;
     text-align:center;
     padding:34px 20px;
+    margin-top:35px;
 }
 
 footer p{
@@ -273,21 +309,55 @@ footer p{
 }
 
 @media(max-width:1100px){
-    .main-wrapper{grid-template-columns:1fr}
-    .sidebar,.resources,.content{
+    .main-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar,
+    .resources,
+    .content{
         margin-top:0;
         position:relative;
         top:0;
     }
-    .buttons{flex-direction:row;flex-wrap:wrap}
-    .btn{display:inline-block}
-    .tool-list{flex-direction:row;flex-wrap:wrap}
-    h1{font-size:34px}
+
+    .buttons{
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+
+    .btn{
+        display:inline-block;
+    }
+
+    .tool-list{
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+
+    .agenda-grid{
+        grid-template-columns:1fr;
+    }
+
+    h1{
+        font-size:34px;
+    }
 }
 
 @media(max-width:600px){
-    .hero-logo{max-height:60px}
-    .sidebar,.resources,.card{padding:24px}
+    header{
+        padding:55px 20px 70px;
+    }
+
+    .hero-logo{
+        max-height:60px;
+    }
+
+    .sidebar,
+    .resources,
+    .card{
+        padding:24px;
+    }
 }
 </style>
 </head>
@@ -300,8 +370,7 @@ footer p{
         <img src="assets/fao_logo.png" alt="FAO" class="hero-logo">
 
         <div class="hero-title">
-            <div class="badge">Webinar introductorio · FAO · MAG Costa Rica</div>
-
+            
             <h1>Google Earth Engine</h1>
 
             <p class="subtitle">
@@ -317,6 +386,7 @@ footer p{
 <main class="main-wrapper">
 
     <aside class="sidebar">
+
         <h2>Información general</h2>
 
         <div class="info-block">
@@ -329,7 +399,7 @@ footer p{
         <div class="info-block">
             <h3>Objetivo</h3>
             <p>
-                Introducir a los participantes en el uso de Google Earth Engine para visualizar, analizar y procesar información geoespacial aplicada a agricultura, restauración y monitoreo de ecosistemas.
+                Introducir a los participantes en el uso de Google Earth Engine para visualizar, analizar y procesar información geoespacial aplicada a agricultura, restauración y monitoreo ambiental.
             </p>
         </div>
 
@@ -350,67 +420,16 @@ footer p{
                 <li>Conexión estable a Internet.</li>
             </ul>
         </div>
+
     </aside>
 
     <section class="content">
 
         <div class="card">
-            <h2>Agenda del webinar</h2>
-
-            <div class="agenda-item">
-                <span>Bloque 1</span>
-                <h3>Introducción a Google Earth Engine</h3>
-                <p>
-                    ¿Qué es Google Earth Engine, cuáles son las ventajas del procesamiento geoespacial en la nube y cómo puede aplicarse en agricultura, restauración y monitoreo ambiental?
-                </p>
-            </div>
-
-            <div class="agenda-item">
-                <span>Bloque 2</span>
-                <h3>Integración de datos desde QGIS</h3>
-                <p>
-                    Conexión a servicios WFS del SNIT, selección de un área de interés y exportación para su uso en Google Earth Engine.
-                </p>
-            </div>
-
-            <div class="agenda-item">
-                <span>Bloque 3</span>
-                <h3>Exploración de imágenes Sentinel-2</h3>
-                <p>
-                    Carga del área de interés, filtrado de imágenes, visualización RGB y exploración del catálogo de datos de Earth Engine.
-                </p>
-            </div>
-
-            <div class="agenda-item">
-                <span>Bloque 4</span>
-                <h3>NDVI para monitoreo de ecosistemas</h3>
-                <p>
-                    Cálculo e interpretación del índice de vegetación NDVI para identificar cambios en cobertura, vigor vegetal y estado de la vegetación.
-                </p>
-            </div>
-
-            <div class="agenda-item">
-                <span>Bloque 5</span>
-                <h3>Comparación temporal y detección de cambios</h3>
-                <p>
-                    Comparación de imágenes de diferentes fechas para observar tendencias y cambios en la vegetación.
-                </p>
-            </div>
-
-            <div class="agenda-item">
-                <span>Bloque 6</span>
-                <h3>Exportación de resultados</h3>
-                <p>
-                    Exportación de mapas e información para su uso en QGIS y otros entornos de análisis.
-                </p>
-            </div>
-        </div>
-
-        <div class="card">
             <h2>Caso práctico del webinar</h2>
 
-            <p>
-                Durante la sesión se desarrollará un ejercicio aplicado que conecta datos nacionales con análisis satelital en la nube.
+            <p class="case-intro">
+                La sesión se centra en un ejercicio aplicado que conecta datos nacionales con análisis satelital en la nube.
             </p>
 
             <div class="case-flow">
@@ -434,9 +453,66 @@ footer p{
             </div>
         </div>
 
+        <div class="card">
+            <h2>Agenda del webinar</h2>
+
+            <div class="agenda-grid">
+
+                <div class="agenda-item">
+                    <span>Bloque 1</span>
+                    <h3>Introducción a Google Earth Engine</h3>
+                    <p>
+                        Conceptos clave, ventajas del procesamiento en la nube y aplicaciones en agricultura y gestión ambiental.
+                    </p>
+                </div>
+
+                <div class="agenda-item">
+                    <span>Bloque 2</span>
+                    <h3>Integración de datos desde QGIS</h3>
+                    <p>
+                        Conexión a servicios WFS del SNIT, selección de un área de interés y preparación de datos.
+                    </p>
+                </div>
+
+                <div class="agenda-item">
+                    <span>Bloque 3</span>
+                    <h3>Exploración de imágenes Sentinel-2</h3>
+                    <p>
+                        Carga del área de interés, filtrado de imágenes y visualización RGB.
+                    </p>
+                </div>
+
+                <div class="agenda-item">
+                    <span>Bloque 4</span>
+                    <h3>Análisis de vegetación mediante NDVI</h3>
+                    <p>
+                        Cálculo e interpretación del NDVI para evaluar cobertura vegetal, cultivos, áreas forestales y cambios en el paisaje.
+                    </p>
+                </div>
+
+                <div class="agenda-item">
+                    <span>Bloque 5</span>
+                    <h3>Análisis temporal y detección de cambios</h3>
+                    <p>
+                        Comparación de imágenes para identificar tendencias y cambios en la vegetación y el territorio.
+                    </p>
+                </div>
+
+                <div class="agenda-item">
+                    <span>Bloque 6</span>
+                    <h3>Exportación de resultados</h3>
+                    <p>
+                        Exportación de mapas e información para su uso en QGIS y otros entornos de análisis.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
     </section>
 
     <aside class="resources">
+
         <h2>Antes de iniciar</h2>
 
         <div class="resource-section">
@@ -453,37 +529,34 @@ footer p{
         </div>
 
         <div class="resource-section">
-            <h3>Herramientas complementarias</h3>
+            <h3>Recursos y herramientas</h3>
             <p>
-                Herramientas que pueden ampliar el análisis, automatización e interoperabilidad geoespacial.
+                Accesos de referencia para preparar el entorno, explorar datos nacionales y ampliar el análisis geoespacial.
             </p>
 
             <div class="tool-list">
-                <a class="tool-item" href="https://developers.google.com/earth-engine" target="_blank">Google Earth Engine</a>
+                <a class="tool-item" href="https://code.earthengine.google.com/" target="_blank">Google Earth Engine</a>
+                <a class="tool-item" href="https://www.snitcr.go.cr/" target="_blank">SNIT Costa Rica</a>
                 <a class="tool-item" href="https://qgis.org/" target="_blank">QGIS</a>
                 <a class="tool-item" href="https://colab.research.google.com/" target="_blank">Google Colab</a>
                 <a class="tool-item" href="https://geemap.org/" target="_blank">geemap</a>
                 <a class="tool-item" href="https://www.python.org/" target="_blank">Python</a>
             </div>
         </div>
+
+        <div class="reference-box">
+            <div class="reference-title">Nota</div>
+            <p class="reference-text">
+                Google Colab, geemap y Python se mencionan como herramientas complementarias para futuros flujos de automatización, no como contenidos centrales de esta sesión introductoria.
+            </p>
+        </div>
+
     </aside>
 
 </main>
 
-<div class="links-title">Recursos y enlaces de referencia</div>
-
-<section class="bottom-links">
-    <a target="_blank" href="https://code.earthengine.google.com/">Google Earth Engine</a>
-    <a target="_blank" href="https://www.snitcr.go.cr/">SNIT Costa Rica</a>
-    <a target="_blank" href="https://qgis.org/">QGIS</a>
-    <a target="_blank" href="https://colab.research.google.com/">Google Colab</a>
-    <a target="_blank" href="https://geemap.org/">geemap</a>
-    <a target="_blank" href="https://www.python.org/">Python</a>
-</section>
-
 <footer>
     <p><strong>GEE Cloud Webinar</strong></p>
-    <p>Google Earth Engine para agricultura y gestión ambiental</p>
     <p>Desarrollado por Grettel Vargas Azofeifa</p>
 </footer>
 
