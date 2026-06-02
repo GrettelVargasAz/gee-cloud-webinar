@@ -3,47 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Google Earth Engine | Webinar</title>
+<title>Google Earth Engine</title>
 
 <style>
-:root{
-    --blue-dark:#0b3558;
-    --blue:#1f5b93;
-    --blue-soft:#eaf2fb;
-    --blue-light:#eef6ff;
-    --text:#1e293b;
-    --muted:#526173;
-    --border:#dbe7f3;
-    --card:#ffffff;
-    --bg:#f4f7fb;
-    --shadow:0 14px 35px rgba(15,23,42,.09);
-    --shadow-soft:0 8px 22px rgba(15,23,42,.07);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
-    font-family:"Segoe UI", Arial, sans-serif;
-    background:var(--bg);
-    color:var(--text);
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:#f4f7fb;
+    color:#1e293b;
     line-height:1.7;
 }
 
 header{
-    background:
-        radial-gradient(circle at top left, rgba(255,255,255,.18), transparent 32%),
-        linear-gradient(135deg,var(--blue-dark),var(--blue));
+    background:linear-gradient(135deg,#0f3b63,#1f5b93);
     color:white;
-    padding:48px 25px 92px;
+    padding:80px 30px 120px;
     text-align:center;
 }
 
@@ -51,119 +26,89 @@ header{
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:42px;
+    gap:50px;
     flex-wrap:wrap;
 }
 
 .hero-logo{
-    max-height:82px;
+    max-height:90px;
     width:auto;
     background:white;
-    padding:10px 14px;
+    padding:12px 16px;
     border-radius:18px;
-    box-shadow:0 10px 24px rgba(0,0,0,.20);
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
 }
 
-.hero-title{
-    max-width:780px;
-}
+.hero-title{max-width:780px}
 
 .badge{
     display:inline-block;
-    background:rgba(255,255,255,.15);
-    border:1px solid rgba(255,255,255,.28);
+    background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.25);
     padding:8px 18px;
     border-radius:999px;
     font-size:13px;
-    font-weight:700;
+    font-weight:600;
     margin-bottom:20px;
-    letter-spacing:.2px;
 }
 
-header h1{
-    font-size:42px;
+h1{
+    font-size:46px;
     line-height:1.15;
-    margin-bottom:14px;
-    letter-spacing:-.5px;
+    margin-bottom:16px;
 }
 
 .subtitle{
     font-size:18px;
     color:#dbeafe;
-    max-width:760px;
-    margin:auto;
 }
 
 .main-wrapper{
-    max-width:1520px;
+    max-width:1500px;
     margin:auto;
-    padding:46px 24px;
+    padding:45px 24px;
     display:grid;
     grid-template-columns:28% 44% 28%;
     gap:24px;
     align-items:start;
 }
 
-.sidebar,
-.resources,
-.card{
-    background:var(--card);
-    border-radius:28px;
-    box-shadow:var(--shadow);
-    border:1px solid var(--border);
+.sidebar,.resources,.card{
+    background:white;
+    border-radius:24px;
+    box-shadow:0 14px 35px rgba(15,23,42,.08);
+    border:1px solid #e2e8f0;
 }
 
-.sidebar,
-.resources{
+.sidebar,.resources{
     padding:30px;
-    margin-top:-82px;
+    margin-top:-95px;
     position:sticky;
     top:22px;
 }
 
-.content{
-    margin-top:-82px;
-}
+.content{margin-top:-95px}
 
-.sidebar h2,
-.resources h2,
-.card h2{
-    color:var(--blue-dark);
+.sidebar h2,.resources h2,.card h2{
+    color:#0f3b63;
     font-size:25px;
-    margin-bottom:18px;
-    line-height:1.25;
+    margin-bottom:20px;
 }
 
-.info-block,
-.resource-section{
-    margin-bottom:24px;
-}
+.info-block,.resource-section{margin-bottom:24px}
 
-.info-block:last-child,
-.resource-section:last-child{
-    margin-bottom:0;
-}
-
-.info-block h3,
-.resource-section h3,
-.agenda-item h3{
-    color:var(--blue);
-    font-size:18px;
+.info-block h3,.resource-section h3{
+    color:#1f5b93;
+    font-size:17px;
     margin-bottom:8px;
-    line-height:1.35;
 }
 
-.info-block p,
-.info-block li,
-.resource-section p,
-.card p{
-    color:var(--muted);
+.info-block p,.info-block li,.resource-section p,.card p{
+    color:#475569;
     font-size:14.5px;
 }
 
-.info-block ul{
-    margin-left:18px;
-}
+.info-block ul{margin-left:18px}
 
 .card{
     padding:30px;
@@ -172,37 +117,37 @@ header h1{
 
 .agenda-item{
     padding:22px;
-    border-radius:22px;
-    background:#f8fbff;
-    border:1px solid var(--border);
+    border-radius:18px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
     margin-bottom:16px;
-    transition:all .25s ease;
-}
-
-.agenda-item:hover{
-    transform:translateY(-2px);
-    box-shadow:var(--shadow-soft);
 }
 
 .agenda-item span{
-    display:inline-block;
-    color:#64748b;
-    font-size:12px;
-    font-weight:800;
+    color:#94a3b8;
+    font-size:11px;
+    font-weight:600;
     text-transform:uppercase;
-    letter-spacing:1px;
+    letter-spacing:.8px;
+    margin-bottom:8px;
+    display:inline-block;
+}
+
+.agenda-item h3{
+    color:#0f3b63;
+    font-size:18px;
+    font-weight:700;
     margin-bottom:8px;
 }
 
 .case-flow{
-    background:var(--blue-light);
-    border-left:6px solid var(--blue);
-    border-radius:20px;
+    background:#eef6ff;
+    border-left:6px solid #1f5b93;
+    border-radius:18px;
     padding:24px;
-    color:var(--blue-dark);
+    color:#0f3b63;
     line-height:1.9;
     font-size:15.5px;
-    margin-top:18px;
 }
 
 .flow-line{
@@ -210,22 +155,22 @@ header h1{
     flex-wrap:wrap;
     align-items:center;
     gap:10px;
-    margin-top:20px;
+    margin-top:18px;
 }
 
 .flow-step{
-    background:white;
-    border:1px solid #d7e9fb;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
     border-radius:999px;
     padding:10px 14px;
     font-size:13px;
-    color:var(--blue-dark);
-    font-weight:800;
+    color:#334155;
+    font-weight:600;
 }
 
 .arrow{
-    color:var(--blue);
-    font-weight:900;
+    color:#94a3b8;
+    font-weight:700;
 }
 
 .buttons{
@@ -238,25 +183,23 @@ header h1{
 .btn{
     display:block;
     text-align:center;
-    background:var(--blue);
+    background:#1f5b93;
     color:white;
     text-decoration:none;
     padding:12px 16px;
-    border-radius:14px;
-    font-weight:800;
+    border-radius:12px;
+    font-weight:700;
     font-size:13.5px;
-    box-shadow:0 8px 18px rgba(31,91,147,.24);
+    box-shadow:0 6px 14px rgba(31,91,147,.22);
     transition:all .25s ease;
 }
 
 .btn:hover{
-    background:var(--blue-dark);
+    background:#0f3b63;
     transform:translateY(-2px);
 }
 
-.btn.secondary{
-    background:#334155;
-}
+.btn.secondary{background:#334155}
 
 .tool-list{
     display:flex;
@@ -268,7 +211,7 @@ header h1{
 .tool-item{
     display:block;
     background:#eef4fa;
-    color:var(--blue-dark);
+    color:#0f3b63;
     padding:12px 16px;
     border-radius:999px;
     font-size:13px;
@@ -280,46 +223,44 @@ header h1{
 }
 
 .tool-item:hover{
-    background:var(--blue);
+    background:#1f5b93;
     color:white;
     transform:translateY(-2px);
     box-shadow:0 8px 20px rgba(31,91,147,.20);
 }
 
 .links-title{
-    background:var(--blue-soft);
+    background:#eaf2fb;
     text-align:center;
-    padding:20px 20px 6px;
+    padding:18px 20px 6px;
     font-size:18px;
-    font-weight:800;
-    color:var(--blue-dark);
-    letter-spacing:.2px;
-    border-top:1px solid var(--border);
+    font-weight:700;
+    color:#0f3b63;
+    letter-spacing:.3px;
 }
 
 .bottom-links{
-    background:var(--blue-soft);
-    padding:12px 20px 20px;
+    background:#eaf2fb;
+    padding:12px 20px 22px;
     display:flex;
     justify-content:center;
     align-items:center;
     flex-wrap:wrap;
-    gap:10px 24px;
+    gap:24px;
+    border-top:1px solid #dbeafe;
 }
 
 .bottom-links a{
     text-decoration:none;
-    color:var(--blue-dark);
+    color:#0f3b63;
     font-size:14px;
-    font-weight:800;
+    font-weight:700;
 }
 
-.bottom-links a:hover{
-    color:var(--blue);
-}
+.bottom-links a:hover{color:#1f5b93}
 
 footer{
-    background:var(--blue-dark);
+    background:#0f3b63;
     color:white;
     text-align:center;
     padding:34px 20px;
@@ -332,64 +273,21 @@ footer p{
 }
 
 @media(max-width:1100px){
-    .main-wrapper{
-        grid-template-columns:1fr;
-    }
-
-    .sidebar,
-    .resources,
-    .content{
+    .main-wrapper{grid-template-columns:1fr}
+    .sidebar,.resources,.content{
         margin-top:0;
         position:relative;
         top:0;
     }
-
-    .buttons{
-        flex-direction:row;
-        flex-wrap:wrap;
-    }
-
-    .btn{
-        display:inline-block;
-    }
-
-    .tool-list{
-        flex-direction:row;
-        flex-wrap:wrap;
-    }
-
-    .tool-item{
-        min-width:160px;
-    }
-
-    header h1{
-        font-size:32px;
-    }
-
-    .subtitle{
-        font-size:16px;
-    }
+    .buttons{flex-direction:row;flex-wrap:wrap}
+    .btn{display:inline-block}
+    .tool-list{flex-direction:row;flex-wrap:wrap}
+    h1{font-size:34px}
 }
 
 @media(max-width:600px){
-    header{
-        padding:38px 18px 56px;
-    }
-
-    .hero-logo{
-        max-height:58px;
-    }
-
-    .sidebar,
-    .resources,
-    .card{
-        padding:24px;
-        border-radius:22px;
-    }
-
-    .main-wrapper{
-        padding:28px 16px;
-    }
+    .hero-logo{max-height:60px}
+    .sidebar,.resources,.card{padding:24px}
 }
 </style>
 </head>
@@ -402,13 +300,9 @@ footer p{
         <img src="assets/fao_logo.png" alt="FAO" class="hero-logo">
 
         <div class="hero-title">
-            <div class="badge">
-                Webinar introductorio · FAO · MAG Costa Rica
-            </div>
+            <div class="badge">Webinar introductorio · FAO · MAG Costa Rica</div>
 
-            <h1>
-                Google Earth Engine
-            </h1>
+            <h1>Google Earth Engine</h1>
 
             <p class="subtitle">
                 Procesamiento geoespacial en la nube para agricultura y gestión ambiental
@@ -423,7 +317,6 @@ footer p{
 <main class="main-wrapper">
 
     <aside class="sidebar">
-
         <h2>Información general</h2>
 
         <div class="info-block">
@@ -457,7 +350,6 @@ footer p{
                 <li>Conexión estable a Internet.</li>
             </ul>
         </div>
-
     </aside>
 
     <section class="content">
@@ -522,14 +414,10 @@ footer p{
             </p>
 
             <div class="case-flow">
-                Datos nacionales del SNIT
-                <br>
-                Preparación del área de interés en QGIS
-                <br>
-                Carga en Google Earth Engine
-                <br>
-                Cálculo de NDVI
-                <br>
+                Datos nacionales del SNIT<br>
+                Preparación del área de interés en QGIS<br>
+                Carga en Google Earth Engine<br>
+                Cálculo de NDVI<br>
                 Exportación de resultados
 
                 <div class="flow-line">
@@ -549,7 +437,6 @@ footer p{
     </section>
 
     <aside class="resources">
-
         <h2>Antes de iniciar</h2>
 
         <div class="resource-section">
@@ -559,17 +446,9 @@ footer p{
             </p>
 
             <div class="buttons">
-                <a class="btn" target="_blank" href="https://earthengine.google.com/">
-                    Solicitar acceso
-                </a>
-
-                <a class="btn secondary" target="_blank" href="https://code.earthengine.google.com/">
-                    Code Editor
-                </a>
-
-                <a class="btn secondary" target="_blank" href="https://www.youtube.com/results?search_query=crear+cuenta+google+earth+engine">
-                    Tutorial YouTube
-                </a>
+                <a class="btn" target="_blank" href="https://earthengine.google.com/">Solicitar acceso</a>
+                <a class="btn secondary" target="_blank" href="https://code.earthengine.google.com/">Code Editor</a>
+                <a class="btn secondary" target="_blank" href="https://www.youtube.com/results?search_query=crear+cuenta+google+earth+engine">Tutorial YouTube</a>
             </div>
         </div>
 
@@ -580,60 +459,26 @@ footer p{
             </p>
 
             <div class="tool-list">
-                <a class="tool-item" href="https://developers.google.com/earth-engine" target="_blank">
-                    Google Earth Engine
-                </a>
-
-                <a class="tool-item" href="https://qgis.org/" target="_blank">
-                    QGIS
-                </a>
-
-                <a class="tool-item" href="https://colab.research.google.com/" target="_blank">
-                    Google Colab
-                </a>
-
-                <a class="tool-item" href="https://geemap.org/" target="_blank">
-                    geemap
-                </a>
-
-                <a class="tool-item" href="https://www.python.org/" target="_blank">
-                    Python
-                </a>
+                <a class="tool-item" href="https://developers.google.com/earth-engine" target="_blank">Google Earth Engine</a>
+                <a class="tool-item" href="https://qgis.org/" target="_blank">QGIS</a>
+                <a class="tool-item" href="https://colab.research.google.com/" target="_blank">Google Colab</a>
+                <a class="tool-item" href="https://geemap.org/" target="_blank">geemap</a>
+                <a class="tool-item" href="https://www.python.org/" target="_blank">Python</a>
             </div>
         </div>
-
     </aside>
 
 </main>
 
-<div class="links-title">
-    Recursos y enlaces de referencia
-</div>
+<div class="links-title">Recursos y enlaces de referencia</div>
 
 <section class="bottom-links">
-    <a target="_blank" href="https://code.earthengine.google.com/">
-        Google Earth Engine
-    </a>
-
-    <a target="_blank" href="https://www.snitcr.go.cr/">
-        SNIT Costa Rica
-    </a>
-
-    <a target="_blank" href="https://qgis.org/">
-        QGIS
-    </a>
-
-    <a target="_blank" href="https://colab.research.google.com/">
-        Google Colab
-    </a>
-
-    <a target="_blank" href="https://geemap.org/">
-        geemap
-    </a>
-
-    <a target="_blank" href="https://www.python.org/">
-        Python
-    </a>
+    <a target="_blank" href="https://code.earthengine.google.com/">Google Earth Engine</a>
+    <a target="_blank" href="https://www.snitcr.go.cr/">SNIT Costa Rica</a>
+    <a target="_blank" href="https://qgis.org/">QGIS</a>
+    <a target="_blank" href="https://colab.research.google.com/">Google Colab</a>
+    <a target="_blank" href="https://geemap.org/">geemap</a>
+    <a target="_blank" href="https://www.python.org/">Python</a>
 </section>
 
 <footer>
