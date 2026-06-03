@@ -298,31 +298,56 @@ h1{
     background:#fcfdff;
     border:1px solid #e2e8f0;
     border-radius:18px;
-    padding:20px;
-    margin-top:20px;
+    padding:22px;
+    margin-top:22px;
     text-align:center;
 }
 
 .gpt-logo{
-    width:90px;
-    height:90px;
+    width:70px;
+    height:70px;
     object-fit:contain;
     margin-bottom:12px;
-    border-radius:18px;
+    border-radius:16px;
     background:white;
 }
 
 .gpt-assistant h3{
     color:#0f3b63;
-    margin-bottom:10px;
-    font-size:17px;
+    font-size:20px;
+    margin-bottom:12px;
 }
 
-.gpt-assistant p{
+.gpt-description{
     color:#64748b;
     font-size:14px;
-    margin-bottom:15px;
-    line-height:1.55;
+    line-height:1.6;
+    margin-bottom:18px;
+}
+
+.gpt-features{
+    text-align:left;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+    padding:14px;
+    margin-bottom:18px;
+}
+
+.gpt-feature{
+    color:#334155;
+    font-size:13.5px;
+    padding:6px 0;
+}
+
+.gpt-button{
+    margin-top:4px;
+}
+
+.gpt-note{
+    margin-top:12px;
+    font-size:12px;
+    color:#94a3b8;
 }
 
 footer{
@@ -573,28 +598,27 @@ footer p{
                 <a class="tool-item" href="https://qgis.org/" target="_blank">QGIS</a>
                 <a class="tool-item" href="https://colab.research.google.com/" target="_blank">Google Colab</a>
                 <a class="tool-item" href="https://geemap.org/" target="_blank">geemap</a>
-                <a class="tool-item" href="https://www.python.org/" target="_blank">Python</a>
             </div>
         </div>
 
         <div class="gpt-assistant">
 
-            <img src="assets/gee_agro_ambiental_logo.png"
-                 alt="GEE Agro-Ambiental"
-                 class="gpt-logo">
-
             <h3>🤖 GEE Agro-Ambiental</h3>
 
-            <p>
+            <p class="gpt-description">
                 Continúe aprendiendo después del webinar con el asistente especializado
                 en Google Earth Engine para agricultura y gestión ambiental.
             </p>
 
-            <a class="btn"
+            <a class="btn gpt-button"
                target="_blank"
                href="https://chatgpt.com/g/g-6a1f586c750c81918acc23c4fde73dbc-gee-agro-ambiental">
                Abrir GEE Agro-Ambiental
             </a>
+
+            <p class="gpt-note">
+                Requiere una cuenta gratuita de ChatGPT.
+            </p>
 
         </div>
 
@@ -605,7 +629,7 @@ footer p{
 <footer>
     <p><strong>GEE Cloud Webinar</strong></p>
     <p>Aplicaciones para la agricultura y gestión ambiental</p>
-    <p>Desarrollado por Grettel Vargas Azofeifa</p>
+    <p>Desarrollado por: Grettel Vargas Azofeifa</p>
 </footer>
 
 </body>
