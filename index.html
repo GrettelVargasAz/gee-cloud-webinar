@@ -293,24 +293,35 @@ h1{
     box-shadow:none;
 }
 
-.reference-box{
+
+.gpt-assistant{
     background:#fcfdff;
-    border:1px solid var(--gray-border-soft);
+    border:1px solid #e2e8f0;
     border-radius:18px;
     padding:20px;
-    margin-top:8px;
+    margin-top:20px;
+    text-align:center;
 }
 
-.reference-title{
-    color:var(--blue-dark);
-    font-size:16px;
-    font-weight:700;
+.gpt-logo{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    margin-bottom:12px;
+    border-radius:18px;
+    background:white;
+}
+
+.gpt-assistant h3{
+    color:#0f3b63;
     margin-bottom:10px;
+    font-size:17px;
 }
 
-.reference-text{
-    color:var(--text-muted);
-    font-size:13.8px;
+.gpt-assistant p{
+    color:#64748b;
+    font-size:14px;
+    margin-bottom:15px;
     line-height:1.55;
 }
 
@@ -566,11 +577,25 @@ footer p{
             </div>
         </div>
 
-        <div class="reference-box">
-            <div class="reference-title">Nota</div>
-            <p class="reference-text">
-                Google Colab, geemap y Python se mencionan como herramientas complementarias para futuros flujos de automatización, no como contenidos centrales de esta sesión introductoria.
+        <div class="gpt-assistant">
+
+            <img src="assets/gee_agro_ambiental_logo.png"
+                 alt="GEE Agro-Ambiental"
+                 class="gpt-logo">
+
+            <h3>🤖 GEE Agro-Ambiental</h3>
+
+            <p>
+                Continúe aprendiendo después del webinar con el asistente especializado
+                en Google Earth Engine para agricultura y gestión ambiental.
             </p>
+
+            <a class="btn"
+               target="_blank"
+               href="https://chatgpt.com/g/g-6a1f586c750c81918acc23c4fde73dbc-gee-agro-ambiental">
+               Abrir GEE Agro-Ambiental
+            </a>
+
         </div>
 
     </aside>
