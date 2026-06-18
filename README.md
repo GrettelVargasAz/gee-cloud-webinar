@@ -1,4 +1,4 @@
-# 🌎 Google Earth Engine para Aplicaciones Agroambientales
+# 🌎 Webinar GEE
 
 ![FAO](https://img.shields.io/badge/FAO-Corredor_Seco-blue)
 ![MAG](https://img.shields.io/badge/MAG-Costa_Rica-green)
