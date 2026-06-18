@@ -38,7 +38,6 @@ El webinar incluye ejemplos prácticos utilizando Sentinel-2, WorldCover, NDVI, 
 - Procesar imágenes satelitales en la nube.
 - Generar indicadores agroambientales.
 - Calcular índices de vegetación (NDVI).
-- Integrar GEE con Python y Geemap.
 - Conectar resultados con QGIS.
 
 ---
