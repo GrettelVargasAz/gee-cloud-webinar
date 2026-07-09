@@ -20,7 +20,10 @@
       --radio: 22px;
     }
 
-    * { box-sizing: border-box; scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -50,7 +53,10 @@
       flex-wrap: wrap;
     }
 
-    .logo { font-weight: 800; font-size: 1.2rem; }
+    .logo {
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
 
     nav a {
       color: white;
@@ -60,7 +66,9 @@
       font-weight: 600;
     }
 
-    nav a:hover { text-decoration: underline; }
+    nav a:hover {
+      text-decoration: underline;
+    }
 
     .hero {
       background:
@@ -111,7 +119,10 @@
       margin-top: 0;
     }
 
-    .hero-card ul { padding-left: 22px; margin: 0; }
+    .hero-card ul {
+      padding-left: 22px;
+      margin: 0;
+    }
 
     .hero-card li {
       margin-bottom: 8px;
@@ -137,7 +148,9 @@
       box-shadow: 0 8px 18px rgba(46, 139, 87, 0.22);
     }
 
-    section { padding: 65px 8%; }
+    section {
+      padding: 65px 8%;
+    }
 
     h2 {
       color: var(--azul);
@@ -175,7 +188,9 @@
     }
 
     .card p,
-    .card li { font-size: 1.05rem; }
+    .card li {
+      font-size: 1.05rem;
+    }
 
     .icon {
       font-size: 2.7rem;
@@ -283,64 +298,93 @@
     }
 
     .credit-card {
-      background: white;
-      border: 1px solid var(--gris-2);
+      background: #ffffff;
       border-radius: var(--radio);
-      padding: 30px;
+      border: 1px solid var(--gris-2);
       box-shadow: var(--sombra);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 28px;
-      flex-wrap: wrap;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 30px;
+      align-items: start;
     }
 
-    .credit-card h3 {
+    .credit-info h3 {
       color: var(--azul);
+      margin-top: 0;
+      margin-bottom: 15px;
       font-size: 1.45rem;
-      margin: 0 0 10px 0;
     }
 
-    .credit-card p {
-      margin: 4px 0;
+    .credit-info p {
+      margin: 6px 0;
       font-size: 1.05rem;
     }
 
-    .credit-card a {
+    .credit-info a {
       color: var(--azul-2);
       font-weight: 700;
     }
 
-    .logo-box img {
-      height: 80px;
-      max-width: 220px;
+    .logos {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .logos img {
+      height: 70px;
+      width: auto;
       object-fit: contain;
     }
 
-    footer {
-      background: var(--azul);
-      color: white;
-      padding: 34px 8%;
+    .credit-footer {
+      grid-column: 1 / -1;
+      margin-top: 12px;
       text-align: center;
-      margin-top: 20px;
-      font-size: 1rem;
     }
 
-    footer p { margin: 6px 0; }
+    .credit-footer hr {
+      border: none;
+      border-top: 1px solid var(--gris-2);
+      margin-bottom: 20px;
+    }
+
+    .credit-footer p {
+      margin: 6px 0;
+      font-size: 0.98rem;
+    }
 
     @media (max-width: 900px) {
-      body { font-size: 16px; }
+      body {
+        font-size: 16px;
+      }
 
       .hero {
         grid-template-columns: 1fr;
         padding: 60px 6%;
       }
 
-      .hero h1 { font-size: 2.6rem; }
+      .hero h1 {
+        font-size: 2.6rem;
+      }
 
-      section { padding: 52px 6%; }
+      section {
+        padding: 52px 6%;
+      }
 
-      .time-item { grid-template-columns: 1fr; }
+      .time-item {
+        grid-template-columns: 1fr;
+      }
+
+      .credit-card {
+        grid-template-columns: 1fr;
+      }
+
+      .logos {
+        justify-content: flex-start;
+      }
 
       nav a {
         display: inline-block;
@@ -354,7 +398,7 @@
 
   <header>
     <div class="nav">
-      <div class="logo">🌎 Webinar GEE </div>
+      <div class="logo">🌎 Webinar GEE</div>
       <nav>
         <a href="#inicio">Inicio</a>
         <a href="#informacion">Información</a>
@@ -372,9 +416,9 @@
         <span class="badge">Nivel introductorio | 3 horas</span>
         <h1>Introducción a Google Earth Engine</h1>
         <p>
-          Webinar práctico para funcionarios de las instituciones nacionales orientados al uso inicial de
-          Google Earth Engine para visualizar, analizar y exportar información
-          geoespacial aplicada al monitoreo agroambiental.
+          Webinar práctico dirigido a personal técnico de instituciones nacionales,
+          orientado al uso inicial de Google Earth Engine para visualizar, analizar
+          y exportar información geoespacial aplicada al monitoreo agroambiental.
         </p>
         <a class="btn" href="#agenda">Ver agenda</a>
         <a class="btn secondary" href="#caso">Ir al caso práctico</a>
@@ -387,7 +431,7 @@
           <li><strong>Modalidad:</strong> virtual.</li>
           <li><strong>Nivel:</strong> introductorio.</li>
           <li><strong>Enfoque:</strong> demostraciones en vivo y ejercicios guiados.</li>
-          <li><strong>Público:</strong> funcionarios nacionales sin experiencia previa en GEE.</li>
+          <li><strong>Público:</strong> personal técnico de instituciones nacionales, profesionales SIG, especialistas ambientales y extensionistas.</li>
         </ul>
       </div>
     </section>
@@ -414,8 +458,9 @@
           <div class="icon">👥</div>
           <h3>Dirigido a</h3>
           <p>
-            Personal técnico nacional, profesionales SIG, extensionistas agrícolas,
-            especialistas ambientales y personas vinculadas al análisis territorial.
+            Personal técnico de instituciones nacionales, profesionales SIG,
+            extensionistas agrícolas, especialistas ambientales y personas vinculadas
+            al análisis territorial.
           </p>
         </div>
 
@@ -437,8 +482,8 @@
           <ul>
             <li>Demostraciones en vivo.</li>
             <li>Ejercicios guiados.</li>
-            <li>Datos reales del SNIT.</li>
-            <li>Casos de uso aplicados.</li>
+            <li>Datos reales disponibles públicamente.</li>
+            <li>Casos de uso aplicados al monitoreo agroambiental.</li>
             <li>Espacio para preguntas.</li>
           </ul>
         </div>
@@ -513,8 +558,8 @@
         <div class="time-item">
           <div class="time">10 min</div>
           <div>
-            <h3>7. Aplicaciones, preguntas y cierre</h3>
-            <p>Casos de uso institucionales, preguntas finales, recursos disponibles y próximos pasos.</p>
+            <h3>7. Casos de uso y cierre</h3>
+            <p>Aplicaciones institucionales, preguntas finales, recursos disponibles y próximos pasos.</p>
           </div>
         </div>
       </div>
@@ -593,63 +638,45 @@
 
     <section id="creditos">
       <div class="credit-card">
-        <div>
+
+        <div class="credit-info">
           <h3>Desarrollado por</h3>
+
           <p><strong>Grettel Vargas Azofeifa</strong></p>
           <p>Especialista SIG y Geomática</p>
-          <p>Proyecto Flagship · Corredor Seco Centroamericano · FAO</p>
+          <p>Proyecto Flagship · Corredor Seco Centroamericano</p>
+
           <p>
-            📧 <a href="mailto:grettel.vargasazofeifa@fao.org">
+            📧
+            <a href="mailto:grettel.vargasazofeifa@fao.org">
               grettel.vargasazofeifa@fao.org
             </a>
           </p>
         </div>
 
-        <div class="logo-box">
-          <img src="images/logo-fao.png" alt="Logo FAO">
+        <div class="logos">
+          <img src="assets/gee_logo.png" alt="Google Earth Engine">
+          <img src="assets/fao_logo.png" alt="FAO">
         </div>
+
+        <div class="credit-footer">
+          <hr>
+
+          <p><strong>Material de capacitación – Introducción a Google Earth Engine</strong></p>
+
+          <p>
+            Monitoreo agroambiental para instituciones nacionales
+          </p>
+
+          <p>
+            © 2026 Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO)
+          </p>
+        </div>
+
       </div>
     </section>
 
   </main>
 
- <section id="créditos">
-    <div class="credit-card">
-
-        <div class="credit-info">
-
-            <h3>Desarrollado por</h3>
-
-            <p><strong>Grettel Vargas Azofeifa</strong></p>
-
-            <p>Especialista SIG y Geomática</p>
-
-            <p>Proyecto Flagship · Corredor Seco Centroamericano</p>
-
-            <p>
-                📧
-                <a href="mailto:grettel.vargasazofeifa@fao.org">
-                    grettel.vargasazofeifa@fao.org
-                </a>
-            </p>
-
-        </div>
-
-        <div class="logo-box">
-            <img src="assets/fao_logo.png" alt="FAO">
-        </div>
-
-        <div class="credit-footer">
-
-            <hr>
-
-            <p><strong>Webinar:</strong> Introducción a Google Earth Engine para el monitoreo agroambiental.</p>
-
-            <p>
-                © 2026 Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO)
-            </p>
-
-        </div>
-
-    </div>
-</section>
+</body>
+</html>
