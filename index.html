@@ -297,63 +297,66 @@
       font-size: 1.05rem;
     }
 
-    .credit-card {
-      background: #ffffff;
-      border-radius: var(--radio);
-      border: 1px solid var(--gris-2);
-      box-shadow: var(--sombra);
-      padding: 34px;
-      display: grid;
-      grid-template-columns: 1fr 220px;
-      gap: 30px;
-      align-items: start;
-    }
-
-    .credit-info h3 {
-      color: var(--azul);
-      margin-top: 0;
-      margin-bottom: 15px;
-      font-size: 1.45rem;
-    }
-
-    .credit-info p {
-      margin: 6px 0;
-      font-size: 1.05rem;
-    }
-
-    .credit-info a {
-      color: var(--azul-2);
-      font-weight: 700;
-    }
-
-    .logos {
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-start;
-      gap: 18px;
-    }
-
-    .logos img {
-      height: 70px;
-      width: auto;
-      object-fit: contain;
+    #creditos {
+      background: var(--azul);
+      color: white;
+      padding: 42px 8%;
+      margin-top: 40px;
     }
 
     .credit-footer {
-      grid-column: 1 / -1;
-      margin-top: 12px;
-      text-align: center;
+      max-width: 1400px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.6fr 1.1fr;
+      gap: 36px;
+      align-items: center;
     }
 
-    .credit-footer hr {
-      border: none;
-      border-top: 1px solid var(--gris-2);
-      margin-bottom: 20px;
+    .credit-footer h3,
+    .credit-footer p {
+      color: white;
+      margin: 4px 0;
+    }
+
+    .credit-footer h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
     }
 
     .credit-footer p {
-      margin: 6px 0;
       font-size: 0.98rem;
+      line-height: 1.5;
+    }
+
+    .footer-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .footer-logos img {
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+      background: white;
+      padding: 6px;
+      border-radius: 10px;
+    }
+
+    .footer-author {
+      text-align: left;
+    }
+
+    .footer-author a {
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .footer-author a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 900px) {
@@ -378,11 +381,12 @@
         grid-template-columns: 1fr;
       }
 
-      .credit-card {
+      .credit-footer {
         grid-template-columns: 1fr;
+        text-align: left;
       }
 
-      .logos {
+      .footer-logos {
         justify-content: flex-start;
       }
 
@@ -637,39 +641,30 @@
     </section>
 
     <section id="creditos">
-      <div class="credit-card">
+      <div class="credit-footer">
 
-        <div class="credit-info">
-          <h3>Desarrollado por</h3>
-
-          <p><strong>Grettel Vargas Azofeifa</strong></p>
-          <p>Especialista SIG y Geomática</p>
-          <p>Proyecto Flagship · Corredor Seco Centroamericano</p>
-
-          <p>
-            📧
-            <a href="mailto:grettel.vargasazofeifa@fao.org">
-              grettel.vargasazofeifa@fao.org
-            </a>
-          </p>
+        <div class="footer-course">
+          <h3>Material de capacitación</h3>
+          <p><strong>Introducción a Google Earth Engine</strong></p>
+          <p>Monitoreo agroambiental para instituciones nacionales</p>
+          <p>© 2026 Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO)</p>
         </div>
 
-        <div class="logos">
+        <div class="footer-logos">
           <img src="assets/gee_logo.png" alt="Google Earth Engine">
           <img src="assets/fao_logo.png" alt="FAO">
         </div>
 
-        <div class="credit-footer">
-          <hr>
-
-          <p><strong>Material de capacitación – Introducción a Google Earth Engine</strong></p>
-
+        <div class="footer-author">
+          <h3>Desarrollado por</h3>
+          <p><strong>Grettel Vargas Azofeifa</strong></p>
+          <p>Especialista SIG y Geomática</p>
+          <p>Proyecto Flagship</p>
+          <p>Corredor Seco Centroamericano</p>
           <p>
-            Monitoreo agroambiental para instituciones nacionales
-          </p>
-
-          <p>
-            © 2026 Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO)
+            <a href="mailto:grettel.vargasazofeifa@fao.org">
+              grettel.vargasazofeifa@fao.org
+            </a>
           </p>
         </div>
 
