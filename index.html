@@ -159,11 +159,13 @@
       margin: 0 0 16px 0;
     }
 
-    .intro-text{
-    font-size:1.08rem;
-    line-height:1.7;
-    margin-bottom:30px;
-}
+    .intro-text {
+      width: 100%;
+      max-width: none;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
 
     .grid {
       display: grid;
@@ -298,66 +300,71 @@
     }
 
     #creditos {
-  background: var(--azul);
-  color: white;
-  padding: 42px 8%;
-  margin-top: 40px;
-}
+      background: var(--azul);
+      color: white;
+      padding: 48px 8%;
+      margin-top: 40px;
+    }
 
-.credit-footer {
-  max-width: 1400px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
+    .credit-footer {
+      max-width: 1400px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.25fr 0.9fr;
+      gap: 80px;
+      align-items: center;
+    }
 
-.credit-footer h3,
-.credit-footer p {
-  color: white;
-  margin: 5px 0;
-}
+    .footer-course {
+      text-align: left;
+    }
 
-.credit-footer h3 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
+    .footer-author {
+      text-align: right;
+      justify-self: end;
+    }
 
-.credit-footer p {
-  font-size: 0.98rem;
-  line-height: 1.5;
-}
+    .credit-footer h3,
+    .credit-footer p {
+      color: white;
+      margin: 6px 0;
+    }
 
-.footer-logos {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  margin-top: 18px;
-}
+    .credit-footer h3 {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
 
-.footer-logos img {
-  height: 58px;
-  width: auto;
-  object-fit: contain;
-  background: white;
-  padding: 6px;
-  border-radius: 10px;
-}
+    .credit-footer p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
 
-.footer-author {
-  text-align: left;
-}
+    .footer-author a {
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
 
-.footer-author a {
-  color: white;
-  font-weight: 700;
-  text-decoration: none;
-}
+    .footer-author a:hover {
+      text-decoration: underline;
+    }
 
-.footer-author a:hover {
-  text-decoration: underline;
-}
+    .footer-logos {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-top: 24px;
+    }
+
+    .footer-logos img {
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+      background: white;
+      padding: 7px;
+      border-radius: 10px;
+    }
 
     @media (max-width: 900px) {
       body {
@@ -383,7 +390,12 @@
 
       .credit-footer {
         grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-author {
         text-align: left;
+        justify-self: start;
       }
 
       .footer-logos {
@@ -619,16 +631,16 @@
       <div class="grid">
         <div class="card resource">
           <h3>Herramientas</h3>
-          <a href="#" target="_blank">🌎 Google Earth Engine</a>
-          <a href="#" target="_blank">🧭 QGIS</a>
-          <a href="#" target="_blank">🐙 Repositorio GitHub</a>
+          <a href="https://code.earthengine.google.com/" target="_blank">🌎 Google Earth Engine</a>
+          <a href="https://qgis.org/download/" target="_blank">🧭 QGIS</a>
+          <a href="https://github.com/GrettelVargasAz/gee-cloud-webinar" target="_blank">🐙 Repositorio GitHub</a>
         </div>
 
         <div class="card resource">
           <h3>Material del webinar</h3>
-          <a href="#" target="_blank">📄 Presentación</a>
-          <a href="#" target="_blank">💻 Scripts del webinar</a>
-          <a href="#" target="_blank">📁 Datos de ejemplo</a>
+          <a href="pdf/Introduccion_Google_Earth_Engine.pdf" target="_blank">📄 Guía del webinar (PDF)</a>
+          <a href="scripts/" target="_blank">💻 Scripts del webinar</a>
+          <a href="datos/" target="_blank">📁 Datos de ejemplo</a>
         </div>
 
         <div class="card resource">
@@ -641,31 +653,36 @@
     </section>
 
     <section id="creditos">
-  <div class="credit-footer">
+      <div class="credit-footer">
 
-    <div class="footer-course">
-      <h3>Material de capacitación</h3>
-      <p><strong>Introducción a Google Earth Engine</strong></p>
-      <p>Monitoreo agroambiental para instituciones nacionales</p>
-      <p>© 2026 Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO)</p>
+        <div class="footer-course">
+          <h3>Material de capacitación</h3>
+          <p><strong>Introducción a Google Earth Engine</strong></p>
+          <p>Monitoreo agroambiental para instituciones nacionales</p>
+          <p>© 2026 Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO)</p>
 
-      <div class="footer-logos">
-        <img src="assets/fao_logo.png" alt="FAO">
+          <div class="footer-logos">
+            <img src="assets/fao_logo.png" alt="FAO">
+          </div>
+        </div>
+
+        <div class="footer-author">
+          <h3>Desarrollado por</h3>
+          <p><strong>Grettel Vargas Azofeifa</strong></p>
+          <p>Especialista SIG y Geomática</p>
+          <p>Proyecto Flagship</p>
+          <p>Corredor Seco Centroamericano</p>
+          <p>
+            <a href="mailto:grettel.vargasazofeifa@fao.org">
+              grettel.vargasazofeifa@fao.org
+            </a>
+          </p>
+        </div>
+
       </div>
-    </div>
+    </section>
 
-    <div class="footer-author">
-      <h3>Desarrollado por</h3>
-      <p><strong>Grettel Vargas Azofeifa</strong></p>
-      <p>Especialista SIG y Geomática</p>
-      <p>Proyecto Flagship</p>
-      <p>Corredor Seco Centroamericano</p>
-      <p>
-        <a href="mailto:grettel.vargasazofeifa@fao.org">
-          grettel.vargasazofeifa@fao.org
-        </a>
-      </p>
-    </div>
+  </main>
 
-  </div>
-</section>
+</body>
+</html>
