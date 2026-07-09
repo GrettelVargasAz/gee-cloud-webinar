@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Webinar GEE | Introducción a Google Earth Engine</title>
+  <title>Webinar GEE MAG | Introducción a Google Earth Engine</title>
 
   <style>
     :root {
@@ -20,10 +20,7 @@
       --radio: 22px;
     }
 
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -53,10 +50,7 @@
       flex-wrap: wrap;
     }
 
-    .logo {
-      font-weight: 800;
-      font-size: 1.2rem;
-    }
+    .logo { font-weight: 800; font-size: 1.2rem; }
 
     nav a {
       color: white;
@@ -66,9 +60,7 @@
       font-weight: 600;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+    nav a:hover { text-decoration: underline; }
 
     .hero {
       background:
@@ -119,10 +111,7 @@
       margin-top: 0;
     }
 
-    .hero-card ul {
-      padding-left: 22px;
-      margin: 0;
-    }
+    .hero-card ul { padding-left: 22px; margin: 0; }
 
     .hero-card li {
       margin-bottom: 8px;
@@ -148,9 +137,7 @@
       box-shadow: 0 8px 18px rgba(46, 139, 87, 0.22);
     }
 
-    section {
-      padding: 65px 8%;
-    }
+    section { padding: 65px 8%; }
 
     h2 {
       color: var(--azul);
@@ -188,9 +175,7 @@
     }
 
     .card p,
-    .card li {
-      font-size: 1.05rem;
-    }
+    .card li { font-size: 1.05rem; }
 
     .icon {
       font-size: 2.7rem;
@@ -297,6 +282,41 @@
       font-size: 1.05rem;
     }
 
+    .credit-card {
+      background: white;
+      border: 1px solid var(--gris-2);
+      border-radius: var(--radio);
+      padding: 30px;
+      box-shadow: var(--sombra);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .credit-card h3 {
+      color: var(--azul);
+      font-size: 1.45rem;
+      margin: 0 0 10px 0;
+    }
+
+    .credit-card p {
+      margin: 4px 0;
+      font-size: 1.05rem;
+    }
+
+    .credit-card a {
+      color: var(--azul-2);
+      font-weight: 700;
+    }
+
+    .logo-box img {
+      height: 80px;
+      max-width: 220px;
+      object-fit: contain;
+    }
+
     footer {
       background: var(--azul);
       color: white;
@@ -306,31 +326,21 @@
       font-size: 1rem;
     }
 
-    footer p {
-      margin: 6px 0;
-    }
+    footer p { margin: 6px 0; }
 
     @media (max-width: 900px) {
-      body {
-        font-size: 16px;
-      }
+      body { font-size: 16px; }
 
       .hero {
         grid-template-columns: 1fr;
         padding: 60px 6%;
       }
 
-      .hero h1 {
-        font-size: 2.6rem;
-      }
+      .hero h1 { font-size: 2.6rem; }
 
-      section {
-        padding: 52px 6%;
-      }
+      section { padding: 52px 6%; }
 
-      .time-item {
-        grid-template-columns: 1fr;
-      }
+      .time-item { grid-template-columns: 1fr; }
 
       nav a {
         display: inline-block;
@@ -344,7 +354,7 @@
 
   <header>
     <div class="nav">
-      <div class="logo">🌎 Webinar GEE </div>
+      <div class="logo">🌎 Webinar GEE | MAG</div>
       <nav>
         <a href="#inicio">Inicio</a>
         <a href="#informacion">Información</a>
@@ -362,7 +372,7 @@
         <span class="badge">Nivel introductorio | 3 horas</span>
         <h1>Introducción a Google Earth Engine</h1>
         <p>
-          Webinar práctico para funcionarios institucionales de Costa Rica orientado al uso inicial de
+          Webinar práctico para funcionarios del MAG orientado al uso inicial de
           Google Earth Engine para visualizar, analizar y exportar información
           geoespacial aplicada al monitoreo agroambiental.
         </p>
@@ -377,7 +387,7 @@
           <li><strong>Modalidad:</strong> virtual.</li>
           <li><strong>Nivel:</strong> introductorio.</li>
           <li><strong>Enfoque:</strong> demostraciones en vivo y ejercicios guiados.</li>
-          <li><strong>Público:</strong> funcionarios institucionales sin experiencia previa en GEE.</li>
+          <li><strong>Público:</strong> funcionarios del MAG sin experiencia previa en GEE.</li>
         </ul>
       </div>
     </section>
@@ -428,7 +438,7 @@
             <li>Demostraciones en vivo.</li>
             <li>Ejercicios guiados.</li>
             <li>Datos reales del SNIT.</li>
-            <li>Casos de uso aplicados.</li>
+            <li>Casos de uso aplicados al MAG.</li>
             <li>Espacio para preguntas.</li>
           </ul>
         </div>
@@ -436,83 +446,83 @@
     </section>
 
     <section id="agenda">
-  <h2>Agenda del webinar</h2>
-  <p class="intro-text">
-    La sesión tiene una duración total de 3 horas, incluyendo una pausa de 10 minutos.
-    El tiempo se concentra en la exploración práctica de Google Earth Engine,
-    imágenes satelitales e índices aplicados a agricultura.
-  </p>
+      <h2>Agenda del webinar</h2>
+      <p class="intro-text">
+        La sesión tiene una duración total de 3 horas, incluyendo una pausa de 10 minutos.
+        El tiempo se concentra en la exploración práctica de Google Earth Engine,
+        imágenes satelitales e índices aplicados a agricultura.
+      </p>
 
-  <div class="timeline">
-    <div class="time-item">
-      <div class="time">15 min</div>
-      <div>
-        <h3>1. Bienvenida e introducción a Google Earth Engine</h3>
-        <p>Presentación del portal, objetivos del webinar, agenda, alcance de la sesión y conceptos iniciales de GEE.</p>
+      <div class="timeline">
+        <div class="time-item">
+          <div class="time">15 min</div>
+          <div>
+            <h3>1. Bienvenida e introducción a Google Earth Engine</h3>
+            <p>Presentación del portal, objetivos del webinar, agenda, alcance de la sesión y conceptos iniciales de GEE.</p>
+          </div>
+        </div>
+
+        <div class="time-item">
+          <div class="time">30 min</div>
+          <div>
+            <h3>2. Conociendo la plataforma</h3>
+            <p>Code Editor, Scripts, Assets, Console, Inspector, Layers, Geometry Tools y catálogo de datos.</p>
+          </div>
+        </div>
+
+        <div class="time-item">
+          <div class="time">25 min</div>
+          <div>
+            <h3>3. Primeros pasos en GEE</h3>
+            <p>Creación del primer script, navegación en el mapa, definición del área de interés, carga de datos y visualización inicial de capas.</p>
+          </div>
+        </div>
+
+        <div class="time-item pause">
+          <div class="time">10 min</div>
+          <div>
+            <h3>☕ Pausa</h3>
+            <p>Descanso breve antes de iniciar el bloque principal de imágenes satelitales.</p>
+          </div>
+        </div>
+
+        <div class="time-item">
+          <div class="time">45 min</div>
+          <div>
+            <h3>4. Exploración de imágenes satelitales</h3>
+            <p>Sentinel-2 y Landsat, filtros por fecha y nubosidad, bandas espectrales, composiciones RGB y comparación de imágenes.</p>
+          </div>
+        </div>
+
+        <div class="time-item">
+          <div class="time">35 min</div>
+          <div>
+            <h3>5. Índices espectrales para agricultura</h3>
+            <p>NDVI como índice principal, introducción a NDWI, EVI y otros índices útiles para agricultura, interpretación básica y aplicaciones.</p>
+          </div>
+        </div>
+
+        <div class="time-item">
+          <div class="time">10 min</div>
+          <div>
+            <h3>6. Exportación de resultados</h3>
+            <p>Exportación de mapas, GeoTIFF, Google Drive, escala, resolución y uso posterior en QGIS u otros sistemas SIG.</p>
+          </div>
+        </div>
+
+        <div class="time-item">
+          <div class="time">10 min</div>
+          <div>
+            <h3>7. Aplicaciones en el MAG, preguntas y cierre</h3>
+            <p>Casos de uso institucionales, preguntas finales, recursos disponibles y próximos pasos.</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="time-item">
-      <div class="time">30 min</div>
-      <div>
-        <h3>2. Conociendo la plataforma</h3>
-        <p>Code Editor, Scripts, Assets, Console, Inspector, Layers, Geometry Tools y catálogo de datos.</p>
+      <div class="note">
+        <strong>Duración total del webinar:</strong> 3 horas (180 minutos), incluyendo una pausa de 10 minutos.
       </div>
-    </div>
-
-    <div class="time-item">
-      <div class="time">25 min</div>
-      <div>
-        <h3>3. Primeros pasos en GEE</h3>
-        <p>Creación del primer script, navegación en el mapa, definición del área de interés, carga de datos y visualización inicial de capas.</p>
-      </div>
-    </div>
-
-    <div class="time-item pause">
-      <div class="time">10 min</div>
-      <div>
-        <h3>☕ Pausa</h3>
-        <p>Descanso breve antes de iniciar el bloque principal de imágenes satelitales.</p>
-      </div>
-    </div>
-
-    <div class="time-item">
-      <div class="time">45 min</div>
-      <div>
-        <h3>4. Exploración de imágenes satelitales</h3>
-        <p>Sentinel-2 y Landsat, filtros por fecha y nubosidad, bandas espectrales, composiciones RGB y comparación de imágenes.</p>
-      </div>
-    </div>
-
-    <div class="time-item">
-      <div class="time">35 min</div>
-      <div>
-        <h3>5. Índices espectrales para agricultura</h3>
-        <p>NDVI como índice principal, introducción a NDWI, EVI y otros índices útiles para agricultura, interpretación básica y aplicaciones.</p>
-      </div>
-    </div>
-
-    <div class="time-item">
-      <div class="time">10 min</div>
-      <div>
-        <h3>6. Exportación de resultados</h3>
-        <p>Exportación de mapas, GeoTIFF, Google Drive, escala, resolución y uso posterior en QGIS u otros sistemas SIG.</p>
-      </div>
-    </div>
-
-    <div class="time-item">
-      <div class="time">10 min</div>
-      <div>
-        <h3>7. Aplicaciones en el MAG, preguntas y cierre</h3>
-        <p>Casos de uso institucionales, preguntas finales, recursos disponibles y próximos pasos.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="note">
-    Tiempo total: 180 minutos, incluyendo una pausa de 10 minutos.
-  </div>
-</section>
+    </section>
 
     <section id="caso">
       <h2>Caso práctico del webinar</h2>
@@ -581,11 +591,31 @@
       </div>
     </section>
 
+    <section id="creditos">
+      <div class="credit-card">
+        <div>
+          <h3>Desarrollado por</h3>
+          <p><strong>Grettel Vargas Azofeifa</strong></p>
+          <p>Especialista SIG y Geomática</p>
+          <p>Proyecto Flagship · Corredor Seco Centroamericano · FAO</p>
+          <p>
+            📧 <a href="mailto:grettel.vargasazofeifa@fao.org">
+              grettel.vargasazofeifa@fao.org
+            </a>
+          </p>
+        </div>
+
+        <div class="logo-box">
+          <img src="images/logo-fao.png" alt="Logo FAO">
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
     <p><strong>Webinar:</strong> Introducción a Google Earth Engine para el monitoreo agroambiental.</p>
-    <p>Material preparado para funcionarios institucionales de Costa Rica.</p>
+    <p>© 2026 Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO)</p>
   </footer>
 
 </body>
