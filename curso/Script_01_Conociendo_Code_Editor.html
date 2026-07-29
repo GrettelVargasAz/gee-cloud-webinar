@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Script 01 — Conociendo el Code Editor</title>
+<style>
+:root{--vino:#1565C0;--vino2:#0D47A1;--crema:#F8FAFC;--papel:#fff;--texto:#263238;--borde:#D8E4F0;--verde:#2f6b4f;--codigo:#17212b;--codigo2:#202d39;--acento:#F9A825}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Segoe UI,Arial,sans-serif;color:var(--texto);background:var(--crema);line-height:1.6}
+aside{position:fixed;inset:0 auto 0 0;width:285px;background:linear-gradient(180deg,var(--vino),var(--vino2));color:#fff;padding:26px 20px;overflow-y:auto}
+.brand{font-size:20px;font-weight:700;line-height:1.25;margin-bottom:8px}.subtitle{font-size:13px;opacity:.82;margin-bottom:24px}nav a{display:block;color:#fff;text-decoration:none;padding:9px 10px;border-radius:8px;margin:3px 0;font-size:14px}nav a:hover{background:rgba(255,255,255,.12)}
+main{margin-left:285px;max-width:1120px;padding:42px 54px 70px}.hero{background:linear-gradient(135deg,#ffffff,#E3F2FD);border:1px solid var(--borde);border-radius:18px;padding:34px;margin-bottom:28px;box-shadow:0 8px 24px rgba(13,71,161,.08)}
+.eyebrow{color:var(--vino);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:12px}h1{margin:.3rem 0 .5rem;font-size:38px;line-height:1.15;color:var(--vino2)}h2{margin-top:0;color:var(--vino);font-size:26px}h3{color:var(--verde);margin-top:0}
+.meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.pill{background:#E3F2FD;color:var(--vino);border-radius:999px;padding:6px 11px;font-size:13px;font-weight:600}
+section{background:var(--papel);border:1px solid var(--borde);border-radius:16px;padding:28px;margin:22px 0;box-shadow:0 5px 18px rgba(48,25,33,.04)}ul,ol{padding-left:22px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{border:1px solid var(--borde);border-radius:12px;padding:18px;background:#fffdfb}
+.note{border-left:5px solid var(--acento);background:#FFF8E1;padding:14px 16px;border-radius:8px;margin:16px 0}.practice{border-left:5px solid #1565C0;background:#EEF6FF;padding:14px 16px;border-radius:8px;margin:16px 0}
+.code-wrap{position:relative;background:var(--codigo);border-radius:14px;overflow:hidden;margin-top:16px;border:1px solid #0c141a}.code-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--codigo2);color:#dfe7ee;font-size:13px}button{border:0;border-radius:7px;padding:7px 11px;cursor:pointer;font-weight:600}.copy{background:#1A73E8;color:#4a3213}pre{margin:0;padding:20px;overflow:auto;color:#eaf0f5;font:14px/1.55 Consolas,Monaco,monospace;tab-size:2}.kw{color:#ff8db3}.api{color:#78dce8}.num{color:#ffd866}.com{color:#7f8c98}
+.resources a{color:var(--vino);font-weight:600;text-decoration:none}details{border:1px solid var(--borde);border-radius:12px;background:white;margin-top:16px}summary{cursor:pointer;padding:14px 16px;font-weight:700;color:var(--vino)}details .inside{padding:0 16px 16px}.footer{color:#6f6f6f;font-size:13px;text-align:center;margin-top:34px}
+@media(max-width:900px){aside{position:relative;width:100%}main{margin-left:0;padding:24px 18px 50px}.grid{grid-template-columns:1fr}h1{font-size:31px}}@media print{aside,.copy{display:none!important}main{margin:0;max-width:none;padding:20px}section,.hero{box-shadow:none;break-inside:avoid}}
+</style></head>
+<body>
+<aside><div class="brand">Google Earth Engine para Aplicaciones Agroambientales</div><div class="subtitle">Script 01 · Guía interactiva</div><nav>
+<a href="#inicio">Inicio</a><a href="#objetivos">Objetivos</a><a href="#uso">Cómo usar esta guía</a><a href="#entorno">1. Reconocer el entorno</a><a href="#console">2. Console y print()</a><a href="#variables">3. Variables</a><a href="#listas">4. Listas</a><a href="#objetos">5. Objetos</a><a href="#mapa">6. Centrar el mapa</a><a href="#base">7. Mapa base</a><a href="#inspector">8. Inspector y Layers</a><a href="#desafio">Desafío opcional</a><a href="#resumen">Resumen</a><a href="#codigo-completo">Código completo</a><a href="#recursos">Recursos oficiales</a>
+</nav></aside>
+<main>
+<header class="hero" id="inicio"><div class="eyebrow">Curso introductorio</div><h1>Script 01 — Conociendo el Code Editor</h1><p>Primer acercamiento al entorno de Google Earth Engine y a los fundamentos mínimos de JavaScript que se utilizarán durante el webinar.</p><div class="meta"><span class="pill">Duración estimada: 30 minutos</span><span class="pill">Nivel: introductorio</span><span class="pill">Autora: Grettel Vargas Azofeifa</span></div></header>
+<section id="objetivos"><h2>🎯 Objetivos</h2><ol><li>Reconocer los paneles principales del Code Editor.</li><li>Ejecutar instrucciones y consultar la Console.</li><li>Crear variables, listas y objetos de parámetros.</li><li>Centrar el mapa y cambiar el mapa base.</li></ol><div class="note"><strong>Conceptos:</strong> Code Editor, Scripts, Docs, Assets, Console, Inspector, Layers, Tasks, <code>var</code>, listas, objetos, <code>print()</code> y <code>Map</code>.</div></section>
+<section id="uso"><h2>📖 Cómo usar esta guía</h2><ul><li>Ejecute el script con <strong>Run</strong>.</li><li>Observe la pestaña <strong>Console</strong> después de cada paso.</li><li>Realice las prácticas cortas antes de continuar.</li><li>No es necesario memorizar las instrucciones.</li></ul></section>
+<section id="entorno"><h2>1. Reconocer el entorno</h2><div class="grid"><div class="card"><h3>Panel izquierdo</h3><ul><li><strong>Scripts:</strong> código guardado.</li><li><strong>Docs:</strong> documentación de objetos y funciones.</li><li><strong>Assets:</strong> datos propios o institucionales.</li></ul></div><div class="card"><h3>Área central</h3><ul><li><strong>Editor:</strong> espacio para escribir código.</li><li><strong>Mapa:</strong> visualización de resultados.</li></ul></div><div class="card"><h3>Panel derecho</h3><ul><li><strong>Inspector:</strong> consulta de capas, objetos y píxeles.</li><li><strong>Console:</strong> resultados de <code>print()</code>.</li><li><strong>Tasks:</strong> tareas de exportación.</li></ul></div></div></section>
+<section id="console"><h2>2. Mostrar información en la Console</h2><p><code>print()</code> muestra mensajes u objetos en la pestaña <strong>Console</strong>.</p><div class="code-wrap"><div class="code-head"><span>JavaScript</span><button class="copy" onclick="copyCode(this)">Copiar</button></div><pre><code>print('¡Bienvenidos al webinar!');
+print('Primer script ejecutado correctamente.');
+
+print('Estoy aprendiendo Google Earth Engine.');</code></pre></div><div class="practice"><strong>🧪 Práctica:</strong> cambie el último mensaje y ejecute nuevamente el script.</div></section>
+<section id="variables"><h2>3. Crear variables</h2><p>Una variable guarda un valor que puede reutilizarse. En estos ejemplos introductorios se utiliza la palabra <code>var</code>.</p><div class="code-wrap"><div class="code-head"><span>JavaScript</span><button class="copy" onclick="copyCode(this)">Copiar</button></div><pre><code>var pais = 'Costa Rica';
+var anio = 2026;
+var nubosidadMaxima = 20;
+var cursoPosterior = 'SEPAL';
+
+print('País:', pais);
+print('Año:', anio);
+print('Nubosidad máxima:', nubosidadMaxima);
+print('Continuidad de la capacitación:', cursoPosterior);</code></pre></div><div class="practice"><strong>🧪 Práctica:</strong> cambie el país o el porcentaje máximo de nubosidad.</div></section>
+<section id="listas"><h2>4. Crear una lista</h2><p>Una lista contiene varios valores ordenados. Más adelante se utilizarán listas para seleccionar bandas.</p><div class="code-wrap"><div class="code-head"><span>JavaScript</span><button class="copy" onclick="copyCode(this)">Copiar</button></div><pre><code>var bandasColorNatural = [
+  'B4',
+  'B3',
+  'B8'
+];
+
+print('Bandas de color natural:', bandasColorNatural);
+print('Primera banda:', bandasColorNatural[0]);</code></pre></div><div class="practice"><strong>🧪 Práctica:</strong> agregue <code>'B8'</code> al final de la lista y revise la Console.</div></section>
+<section id="objetos"><h2>5. Crear un objeto de parámetros</h2><p>Un objeto organiza pares <strong>propiedad: valor</strong>. Se utilizará para configurar visualizaciones y exportaciones.</p><div class="code-wrap"><div class="code-head"><span>JavaScript</span><button class="copy" onclick="copyCode(this)">Copiar</button></div><pre><code>var visualizacion = {
+  bands: bandasColorNatural,
+  min: 0,
+  max: 3000
+};
+
+print('Parámetros de visualización:', visualizacion);
+print('Valor máximo:', visualizacion.max);</code></pre></div><div class="practice"><strong>🧪 Práctica:</strong> cambie <code>max</code> de 3000 a 2500.</div></section>
+<section id="mapa"><h2>6. Centrar el mapa</h2><p><code>Map.setCenter(longitud, latitud, zoom)</code> centra el mapa en unas coordenadas y define el nivel de acercamiento.</p><div class="code-wrap"><div class="code-head"><span>JavaScript</span><button class="copy" onclick="copyCode(this)">Copiar</button></div><pre><code>Map.setCenter(
+  -84.10,
+  9.93,
+  9
+);</code></pre></div><div class="practice"><strong>🧪 Práctica:</strong> cambie el nivel de zoom de 7 a 5 o 9.</div></section>
+<section id="base"><h2>7. Cambiar el mapa base</h2><p><code>Map.setOptions()</code> permite cambiar el fondo cartográfico.</p><div class="code-wrap"><div class="code-head"><span>JavaScript</span><button class="copy" onclick="copyCode(this)">Copiar</button></div><pre><code>Map.setOptions('HYBRID');</code></pre></div><div class="practice"><strong>🧪 Práctica:</strong> pruebe <code>'ROADMAP'</code>, <code>'TERRAIN'</code> o <code>'HYBRID'</code>.</div></section>
+<section id="inspector"><h2>8. Utilizar Inspector y Layers</h2><ol><li>Abra <strong>Inspector</strong>.</li><li>Haga clic en el mapa.</li><li>Observe las coordenadas.</li><li>Revise <strong>Layers</strong>.</li></ol><div class="note">En el Script 02 se agregarán las primeras capas temáticas.</div></section>
+<section id="desafio"><h2>🚀 Desafío opcional</h2><p>Busque en la documentación <code>Map.setCenter()</code> y centre el mapa sobre otro país de Centroamérica.</p><div class="code-wrap"><div class="code-head"><span>Ejemplo: Ciudad de Guatemala</span><button class="copy" onclick="copyCode(this)">Copiar</button></div><pre><code>Map.setCenter(
+  -90.5069,
+  14.6349,
+  9
+);</code></pre></div></section>
+<section id="resumen"><h2>✅ Resumen</h2><ul><li>Reconocimos los paneles del Code Editor.</li><li>Ejecutamos instrucciones.</li><li>Utilizamos <code>print()</code>.</li><li>Creamos variables, listas y objetos.</li><li>Centramos el mapa.</li><li>Cambiamos el mapa base.</li></ul><div class="note"><strong>Importante:</strong> no es necesario memorizar la API. Docs, la guía y el catálogo son herramientas permanentes de trabajo.</div></section>
+<section id="codigo-completo"><h2>💻 Código completo</h2><p>Abra esta sección para consultar o copiar el script íntegro.</p><details><summary>Mostrar código completo</summary><div class="inside"><div class="code-wrap"><div class="code-head"><span>01_Conociendo_Code_Editor.js</span><button class="copy" onclick="copyCode(this)">Copiar todo</button></div><pre><code><span class="com">// ================================================================</span>
+<span class="com">// 🌎 GOOGLE EARTH ENGINE PARA APLICACIONES AGROAMBIENTALES</span>
+<span class="com">// SCRIPT <span class="num">01</span> — CONOCIENDO EL CODE EDITOR</span>
+<span class="com">// Duración estimada: <span class="num">30</span> minutos</span>
+<span class="com">// Autora: Grettel Vargas Azofeifa</span>
+<span class="com">// ================================================================</span>
+<span class="com">//</span>
+<span class="com">// 👋 BIENVENIDA</span>
+<span class="com">// Este script presenta el entorno de Google Earth Engine y los</span>
+<span class="com">// fundamentos mínimos de JavaScript que utilizaremos en el webinar.</span>
+<span class="com">//</span>
+<span class="com">// 🎯 OBJETIVOS</span>
+<span class="com">// <span class="num">1</span>. Reconocer los paneles principales del Code Editor.</span>
+<span class="com">// <span class="num">2</span>. Ejecutar instrucciones y consultar la Console.</span>
+<span class="com">// <span class="num">3</span>. Crear variables, listas y objetos de parámetros.</span>
+<span class="com">// <span class="num">4</span>. Centrar el mapa y cambiar el mapa base.</span>
+<span class="com">//</span>
+<span class="com">// 📖 CÓMO USAR ESTE SCRIPT</span>
+<span class="com">// • Ejecute el script con Run.</span>
+<span class="com">// • Observe la pestaña Console después de cada paso.</span>
+<span class="com">// • Realice las prácticas cortas antes de continuar.</span>
+<span class="com">// • No es necesario memorizar las instrucciones.</span>
+<span class="com">//</span>
+<span class="com">// 🆕 CONCEPTOS</span>
+<span class="com">// Code Editor | Scripts | Docs | Assets | Console | Inspector</span>
+<span class="com">// Layers | Tasks | <span class="kw">var</span> | listas | objetos | <span class="api">print</span>() | <span class="api">Map</span></span>
+<span class="com">//</span>
+<span class="com">// 📚 RECURSOS OFICIALES</span>
+<span class="com">// Introducción:</span>
+<span class="com">// https://developers.google.com/earth-engine/guides/getstarted?hl=es-<span class="num">419</span></span>
+<span class="com">//</span>
+<span class="com">// Code Editor:</span>
+<span class="com">// https://developers.google.com/earth-engine/guides/playground?hl=es-<span class="num">419</span></span>
+<span class="com">//</span>
+<span class="com">// Referencia de la API:</span>
+<span class="com">// https://developers.google.com/earth-engine/apidocs</span>
+<span class="com">//</span>
+<span class="com">// Catálogo de datos:</span>
+<span class="com">// https://developers.google.com/earth-engine/datasets?hl=es-<span class="num">419</span></span>
+
+
+<span class="com">// ================================================================</span>
+<span class="com">// ▶️ PASO <span class="num">1</span>. RECONOCER EL ENTORNO</span>
+<span class="com">// ================================================================</span>
+<span class="com">//</span>
+<span class="com">// PANEL IZQUIERDO</span>
+<span class="com">// • Scripts: código guardado.</span>
+<span class="com">// • Docs: documentación de objetos y funciones.</span>
+<span class="com">// • Assets: datos propios o institucionales.</span>
+<span class="com">//</span>
+<span class="com">// ÁREA CENTRAL</span>
+<span class="com">// • Editor: espacio para escribir el código.</span>
+<span class="com">// • Mapa: visualización de resultados.</span>
+<span class="com">//</span>
+<span class="com">// PANEL DERECHO</span>
+<span class="com">// • Inspector: consulta de capas, objetos y píxeles.</span>
+<span class="com">// • Console: resultados de <span class="api">print</span>() y mensajes.</span>
+<span class="com">// • Tasks: tareas de exportación.</span>
+
+
+<span class="com">// ================================================================</span>
+<span class="com">// ▶️ PASO <span class="num">2</span>. MOSTRAR INFORMACIÓN EN LA CONSOLE</span>
+<span class="com">// ================================================================</span>
+<span class="com">//</span>
+<span class="com">// 📌 <span class="api">print</span>()</span>
+<span class="com">// Muestra mensajes u objetos en la pestaña Console.</span>
+<span class="com">//</span>
+<span class="com">// API:</span>
+<span class="com">// https://developers.google.com/earth-engine/apidocs/<span class="api">print</span></span>
+
+<span class="api">print</span>(&#x27;¡Bienvenidos al webinar!&#x27;);
+<span class="api">print</span>(&#x27;Primer script ejecutado correctamente.&#x27;);
+
+
+<span class="com">// 🧪 PRÁCTICA</span>
+<span class="com">// Cambie el siguiente mensaje y ejecute nuevamente.</span>
+
+<span class="api">print</span>(&#x27;Estoy aprendiendo Google Earth Engine.&#x27;);
+
+
+<span class="com">// ================================================================</span>
+<span class="com">// ▶️ PASO <span class="num">3</span>. CREAR VARIABLES</span>
+<span class="com">// ================================================================</span>
+<span class="com">//</span>
+<span class="com">// Una variable guarda un valor que puede reutilizarse.</span>
+<span class="com">// En los ejemplos introductorios utilizaremos la palabra <span class="kw">var</span>.</span>
+
+<span class="kw">var</span> pais = &#x27;Costa Rica&#x27;;
+<span class="kw">var</span> anio = <span class="num">2026</span>;
+<span class="kw">var</span> nubosidadMaxima = <span class="num">20</span>;
+<span class="kw">var</span> cursoPosterior = &#x27;SEPAL&#x27;;
+
+<span class="api">print</span>(&#x27;País:&#x27;, pais);
+<span class="api">print</span>(&#x27;Año:&#x27;, anio);
+<span class="api">print</span>(&#x27;Nubosidad máxima:&#x27;, nubosidadMaxima);
+<span class="api">print</span>(&#x27;Continuidad de la capacitación:&#x27;, cursoPosterior);
+
+
+<span class="com">// 🧪 PRÁCTICA</span>
+<span class="com">// Cambie el país o el porcentaje máximo de nubosidad.</span>
+
+
+<span class="com">// ================================================================</span>
+<span class="com">// ▶️ PASO <span class="num">4</span>. CREAR UNA LISTA</span>
+<span class="com">// ================================================================</span>
+<span class="com">//</span>
+<span class="com">// Una lista contiene varios valores ordenados.</span>
+<span class="com">// Más adelante utilizaremos listas para seleccionar bandas.</span>
+<span class="com">//</span>
+<span class="com">// API <span class="api">ee</span>.List:</span>
+<span class="com">// https://developers.google.com/earth-engine/apidocs/<span class="api">ee</span>-list</span>
+
+<span class="kw">var</span> bandasColorNatural = [
+  &#x27;B4&#x27;,
+  &#x27;B3&#x27;,
+  &#x27;B8&#x27;
+];
+
+<span class="api">print</span>(&#x27;Bandas de color natural:&#x27;, bandasColorNatural);
+<span class="api">print</span>(&#x27;Primera banda:&#x27;, bandasColorNatural[<span class="num">0</span>]);
+
+
+<span class="com">// 🧪 PRÁCTICA</span>
+<span class="com">// Agregue &#x27;B8&#x27; al final de la lista y revise la Console.</span>
+
+
+<span class="com">// ================================================================</span>
+<span class="com">// ▶️ PASO <span class="num">5</span>. CREAR UN OBJETO DE PARÁMETROS</span>
+<span class="com">// ================================================================</span>
+<span class="com">//</span>
+<span class="com">// Un objeto organiza pares propiedad: valor.</span>
+<span class="com">// Lo utilizaremos para configurar visualizaciones y exportaciones.</span>
+
+<span class="kw">var</span> visualizacion = {
+  bands: bandasColorNatural,
+  min: <span class="num">0</span>,
+  max: <span class="num">3000</span>
+};
+
+<span class="api">print</span>(&#x27;Parámetros de visualización:&#x27;, visualizacion);
+<span class="api">print</span>(&#x27;Valor máximo:&#x27;, visualizacion.max);
+
+
+<span class="com">// 🧪 PRÁCTICA</span>
+<span class="com">// Cambie max de <span class="num">3000</span> a <span class="num">2500</span>.</span>
+
+
+<span class="com">// ================================================================</span>
+<span class="com">// ▶️ PASO <span class="num">6</span>. CENTRAR EL MAPA</span>
+<span class="com">// ================================================================</span>
+<span class="com">//</span>
+<span class="com">// 📌 <span class="api">Map</span>.setCenter(longitud, latitud, zoom)</span>
+<span class="com">//</span>
+<span class="com">// API:</span>
+<span class="com">// https://developers.google.com/earth-engine/apidocs/map-setcenter</span>
+
+<span class="api">Map</span>.setCenter(
+  <span class="num">-84.10</span>,
+  <span class="num">9.93</span>,
+  <span class="num">9</span>
+);
+
+
+<span class="com">// 🧪 PRÁCTICA</span>
+<span class="com">// Cambie el nivel de zoom de <span class="num">7</span> a <span class="num">5</span> o <span class="num">9</span>.</span>
+
+
+<span class="com">// ================================================================</span>
+<span class="com">// ▶️ PASO <span class="num">7</span>. CAMBIAR EL MAPA BASE</span>
+<span class="com">// ================================================================</span>
+<span class="com">//</span>
+<span class="com">// 📌 <span class="api">Map</span>.setOptions()</span>
+<span class="com">//</span>
+<span class="com">// API:</span>
+<span class="com">// https://developers.google.com/earth-engine/apidocs/map-setoptions</span>
+
+<span class="api">Map</span>.setOptions(&#x27;HYBRID&#x27;);
+
+
+<span class="com">// 🧪 PRÁCTICA</span>
+<span class="com">// Pruebe: &#x27;ROADMAP&#x27;, &#x27;TERRAIN&#x27; o &#x27;HYBRID&#x27;.</span>
+
+
+<span class="com">// ================================================================</span>
+<span class="com">// ▶️ PASO <span class="num">8</span>. UTILIZAR INSPECTOR Y LAYERS</span>
+<span class="com">// ================================================================</span>
+<span class="com">//</span>
+<span class="com">// <span class="num">1</span>. Abra Inspector.</span>
+<span class="com">// <span class="num">2</span>. Haga clic en el mapa.</span>
+<span class="com">// <span class="num">3</span>. Observe las coordenadas.</span>
+<span class="com">// <span class="num">4</span>. Revise Layers.</span>
+<span class="com">//</span>
+<span class="com">// En el Script <span class="num">02</span> agregaremos las primeras capas temáticas.</span>
+
+
+<span class="com">// ================================================================</span>
+<span class="com">// 🚀 DESAFÍO OPCIONAL</span>
+<span class="com">// ================================================================</span>
+<span class="com">//</span>
+<span class="com">// Busque en la documentación <span class="api">Map</span>.setCenter().</span>
+<span class="com">// Centre el mapa sobre otro país de Centroamérica, ejemplo Ciudad de Guatemala (<span class="num">-90.5069</span>, <span class="num">14.6349</span>)</span>
+
+
+<span class="com">// ================================================================</span>
+<span class="com">// ✅ RESUMEN</span>
+<span class="com">// ================================================================</span>
+<span class="com">//</span>
+<span class="com">// ✔ Reconocimos los paneles del Code Editor.</span>
+<span class="com">// ✔ Ejecutamos instrucciones.</span>
+<span class="com">// ✔ Utilizamos <span class="api">print</span>().</span>
+<span class="com">// ✔ Creamos variables, listas y objetos.</span>
+<span class="com">// ✔ Centramos el mapa.</span>
+<span class="com">// ✔ Cambiamos el mapa base.</span>
+<span class="com">//</span>
+<span class="com">// ⚠️ IMPORTANTE</span>
+<span class="com">// No es necesario memorizar la API. Docs, la guía y el catálogo</span>
+<span class="com">// son herramientas permanentes de trabajo.</span>
+</code></pre></div></div></details></section>
+<section id="recursos" class="resources"><h2>📚 Recursos oficiales</h2><ul><li><a href="https://developers.google.com/earth-engine/guides/getstarted?hl=es-419" target="_blank">Introducción a Google Earth Engine</a></li><li><a href="https://developers.google.com/earth-engine/guides/playground?hl=es-419" target="_blank">Guía del Code Editor</a></li><li><a href="https://developers.google.com/earth-engine/apidocs" target="_blank">Referencia de la API</a></li><li><a href="https://developers.google.com/earth-engine/datasets?hl=es-419" target="_blank">Catálogo de datos</a></li></ul></section>
+<div class="footer">Google Earth Engine para Aplicaciones Agroambientales · Script 01</div>
+</main>
+<script>function copyCode(button){const code=button.closest('.code-wrap').querySelector('code').innerText;navigator.clipboard.writeText(code).then(()=>{const original=button.textContent;button.textContent='Copiado';setTimeout(()=>button.textContent=original,1400)})};</script>
+</body></html>
