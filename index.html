@@ -6,7 +6,7 @@
   <meta name="author" content="Grettel Vargas Azofeifa" />
   <meta name="description" content="Curso Google Earth Engine para Aplicaciones Agroambientales" />
 
-  <title>Curso Google Earth Engine para Aplicaciones Agroambientales</title>
+  <title>Curso Introductorio de Google Earth Engine</title>
 
   <style>
     :root {
@@ -712,6 +712,78 @@
         width: 72px;
       }
     }
+  
+    .resource-column {
+      background: #ffffff;
+      border: 1px solid var(--gris-2);
+      border-radius: 14px;
+      padding: 18px;
+      display: grid;
+      align-content: start;
+      gap: 10px;
+    }
+
+    .resource-column-header {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+
+    .resource-column-header h3 {
+      margin: 0 0 2px;
+      color: var(--azul);
+      font-size: 1.05rem;
+    }
+
+    .resource-column-header p {
+      margin: 0;
+      color: var(--texto-suave);
+      font-size: 0.82rem;
+    }
+
+    .resource-column .resource-card {
+      grid-template-columns: 42px 1fr 18px;
+      padding: 11px 12px;
+    }
+
+    .resource-column .resource-icon {
+      width: 38px;
+      height: 38px;
+      font-size: 1.15rem;
+    }
+
+    .github-callout {
+      margin-top: 18px;
+      padding: 18px 22px;
+      border: 1px solid #b9dfc8;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #eefaf3, #f8fffb);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .github-callout strong {
+      display: block;
+      color: var(--verde-2);
+      margin-bottom: 3px;
+    }
+
+    .github-callout span {
+      color: var(--texto-suave);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 850px) {
+      .github-callout {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
   </style>
 </head>
 
@@ -723,10 +795,7 @@
 
       <nav class="nav-links" aria-label="Navegación principal">
         <a href="../index.html">Inicio</a>
-        <a href="../index.html#informacion">Información</a>
-        <a href="../index.html#agenda">Agenda</a>
         <a class="active" href="index.html">Curso</a>
-        <a href="../index.html#caso">Caso práctico</a>
         <a href="#recursos">Recursos</a>
       </nav>
     </div>
@@ -752,8 +821,8 @@
             ▶ Comenzar curso
           </a>
 
-          <a class="btn secondary" href="../pdf/Introduccion_Google_Earth_Engine.pdf" target="_blank">
-            📄 Descargar guía
+          <a class="btn secondary" href="#recursos">
+            📂 Ver recursos
           </a>
         </div>
       </div>
@@ -961,36 +1030,153 @@
     <section id="recursos">
       <div class="resource-panel">
         <h2 class="section-title">Recursos del curso</h2>
+        <p style="margin:-4px 0 22px; color:var(--texto-suave);">
+          Acceda a las herramientas, materiales y recursos necesarios para desarrollar
+          los ejercicios y aprovechar al máximo el curso.
+        </p>
 
         <div class="resources-grid">
 
-          <a class="resource-card" href="../pdf/Introduccion_Google_Earth_Engine.pdf" target="_blank">
-            <div class="resource-icon">📄</div>
-            <div>
-              <h3>Material del curso</h3>
-              <p>Guía PDF, presentaciones y documentación descargable.</p>
+          <div class="resource-column">
+            <div class="resource-column-header">
+              <div class="resource-icon">🌐</div>
+              <div>
+                <h3>Plataformas</h3>
+                <p>Herramientas principales utilizadas en el curso.</p>
+              </div>
             </div>
-            <div>›</div>
-          </a>
 
-          <a class="resource-card" href="../scripts/">
-            <div class="resource-icon">⌨️</div>
-            <div>
-              <h3>Scripts y código</h3>
-              <p>Código del curso listo para copiar, revisar y ejecutar.</p>
+            <a class="resource-card" href="https://code.earthengine.google.com/" target="_blank" rel="noopener">
+              <div class="resource-icon">🌍</div>
+              <div>
+                <h3>Google Earth Engine</h3>
+                <p>Acceso al Code Editor.</p>
+              </div>
+              <div>›</div>
+            </a>
+
+            <a class="resource-card" href="https://qgis.org/" target="_blank" rel="noopener">
+              <div class="resource-icon">🧭</div>
+              <div>
+                <h3>QGIS</h3>
+                <p>Sistema de información geográfica de código abierto.</p>
+              </div>
+              <div>›</div>
+            </a>
+
+            <a class="resource-card" href="https://github.com/" target="_blank" rel="noopener">
+              <div class="resource-icon">🐙</div>
+              <div>
+                <h3>Repositorio GitHub</h3>
+                <p>Código, archivos y materiales del curso.</p>
+              </div>
+              <div>›</div>
+            </a>
+          </div>
+
+          <div class="resource-column">
+            <div class="resource-column-header">
+              <div class="resource-icon">📘</div>
+              <div>
+                <h3>Material del curso</h3>
+                <p>Documentos, scripts y datos para seguir las lecciones.</p>
+              </div>
             </div>
-            <div>›</div>
-          </a>
 
-          <a class="resource-card" href="../datos/">
-            <div class="resource-icon">📁</div>
-            <div>
-              <h3>Datos de ejemplo</h3>
-              <p>Conjuntos de datos utilizados en los ejercicios prácticos.</p>
+            <a class="resource-card" href="../presentaciones/Presentacion_GEE.pptx">
+              <div class="resource-icon">📊</div>
+              <div>
+                <h3>Presentación (PPTX)</h3>
+                <p>Presentación principal del curso.</p>
+              </div>
+              <div>›</div>
+            </a>
+
+            <a class="resource-card" href="../pdf/Introduccion_Google_Earth_Engine.pdf" target="_blank">
+              <div class="resource-icon">📄</div>
+              <div>
+                <h3>Guía del curso (PDF)</h3>
+                <p>Material introductorio y de consulta.</p>
+              </div>
+              <div>›</div>
+            </a>
+
+            <a class="resource-card" href="../scripts/">
+              <div class="resource-icon">⌨️</div>
+              <div>
+                <h3>Scripts del curso</h3>
+                <p>Código listo para revisar y ejecutar.</p>
+              </div>
+              <div>›</div>
+            </a>
+
+            <a class="resource-card" href="../datos/">
+              <div class="resource-icon">📁</div>
+              <div>
+                <h3>Datos de ejemplo</h3>
+                <p>Archivos empleados en los ejercicios prácticos.</p>
+              </div>
+              <div>›</div>
+            </a>
+          </div>
+
+          <div class="resource-column">
+            <div class="resource-column-header">
+              <div class="resource-icon">🎓</div>
+              <div>
+                <h3>Recursos adicionales</h3>
+                <p>Material complementario y apoyo para el aprendizaje.</p>
+              </div>
             </div>
-            <div>›</div>
-          </a>
 
+            <a class="resource-card" href="#">
+              <div class="resource-icon">🎥</div>
+              <div>
+                <h3>Grabación del webinar</h3>
+                <p>Enlace disponible después de la sesión.</p>
+              </div>
+              <div>›</div>
+            </a>
+
+            <a class="resource-card" href="#">
+              <div class="resource-icon">❓</div>
+              <div>
+                <h3>Preguntas frecuentes</h3>
+                <p>Respuestas a consultas comunes del curso.</p>
+              </div>
+              <div>›</div>
+            </a>
+
+            <a class="resource-card" href="#">
+              <div class="resource-icon">🤖</div>
+              <div>
+                <h3>Asistente IA</h3>
+                <p>Apoyo para resolver dudas sobre los ejercicios.</p>
+              </div>
+              <div>›</div>
+            </a>
+
+            <a class="resource-card" href="#">
+              <div class="resource-icon">📚</div>
+              <div>
+                <h3>Bibliografía recomendada</h3>
+                <p>Documentación y recursos para profundizar.</p>
+              </div>
+              <div>›</div>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="github-callout">
+          <div>
+            <strong>Todo el código, los scripts y los datos están disponibles en GitHub.</strong>
+            <span>Consulte el repositorio para explorar, descargar y reutilizar los materiales.</span>
+          </div>
+
+          <a class="btn secondary" href="https://github.com/" target="_blank" rel="noopener">
+            🐙 Ver en GitHub
+          </a>
         </div>
       </div>
     </section>
@@ -1001,26 +1187,21 @@
     <div class="footer-inner">
 
       <div>
-        <h3>Material de capacitación</h3>
-        <p><strong>Google Earth Engine para Aplicaciones Agroambientales</strong></p>
-        <p>Monitoreo agroambiental para instituciones nacionales</p>
-        <p>© 2026 Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO)</p>
+        <h3>Organización de las Naciones Unidas para la Alimentación y la Agricultura</h3>
+        <p><strong>FAO</strong></p>
+        <p>Material de capacitación en Google Earth Engine.</p>
       </div>
 
       <div class="footer-author">
-        <h3>Desarrollado por</h3>
-        <p><strong>Grettel Vargas Azofeifa</strong></p>
+        <h3>Google Earth Engine para Aplicaciones Agroambientales</h3>
+        <p>Desarrollado por <strong>Grettel Vargas Azofeifa</strong></p>
         <p>Especialista SIG y Geomática</p>
-        <p>Proyecto Flagship · Corredor Seco Centroamericano</p>
-        <p>
-          <a href="mailto:grettel.vargasazofeifa@fao.org">
-            grettel.vargasazofeifa@fao.org
-          </a>
-        </p>
+        <p>© 2026 FAO</p>
       </div>
 
     </div>
   </footer>
+
 
 </body>
 </html>
