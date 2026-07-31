@@ -7,86 +7,97 @@
 ![QGIS](https://img.shields.io/badge/QGIS-3.44-green)
 ![Webinar](https://img.shields.io/badge/Webinar-2026-blueviolet)
 
-[![Portal](https://img.shields.io/badge/Abrir-Portal-blue)](https://grettelvargasaz.github.io/gee-cloud-webinar/)
+[![Portal](https://img.shields.io/badge/🌐_Abrir-Portal_del_Curso-blue)](https://grettelvargasaz.github.io/gee-cloud-webinar/)
 [![Google Earth Engine](https://img.shields.io/badge/Open-Code_Editor-success)](https://code.earthengine.google.com/)
-[![QGIS](https://img.shields.io/badge/Download-QGIS-green)](https://qgis.org/)
+[![QGIS](https://img.shields.io/badge/Descargar-QGIS-green)](https://qgis.org/)
 
 ---
 
 <p align="center">
-  <img src="assets/banner_webinar.png" width="100%">
+<img src="assets/banner_webinar.png" width="100%">
 </p>
 
-# 📖 Descripción
+# 📖 Introducción
 
-Repositorio oficial del webinar
+Bienvenido al repositorio oficial del curso **Introducción a Google Earth Engine**.
 
-## Introducción a Google Earth Engine
+Este repositorio reúne todos los materiales utilizados durante el webinar desarrollado en el marco del Proyecto **Promover la restauración de ecosistemas productivos en el Corredor Seco Centroamericano** de la FAO.
 
-Capacitación introductoria orientada al uso de Google Earth Engine para acceder, visualizar y analizar información geoespacial mediante imágenes satelitales, con aplicaciones en monitoreo agroambiental.
+El contenido combina teoría y ejercicios prácticos para aprender a utilizar Google Earth Engine como plataforma para el análisis de imágenes satelitales y el procesamiento geoespacial en la nube.
 
-Este webinar constituye una base para futuras capacitaciones en plataformas de monitoreo basadas en imágenes satelitales.
+---
+
+# 🌐 Portal del curso
+
+El curso dispone de un portal web desde el cual puede acceder a:
+
+- Presentación del curso
+- Objetivos
+- Lecciones
+- Recursos
+- Scripts
+- Material complementario
+- Enlaces oficiales
+
+👉 https://grettelvargasaz.github.io/gee-cloud-webinar/
 
 ---
 
 # 🎯 Objetivos
 
-Al finalizar el webinar los participantes podrán:
+Al finalizar el curso los participantes podrán:
 
-- Comprender qué es Google Earth Engine.
-- Navegar por el Code Editor.
-- Explorar el catálogo de datos.
-- Trabajar con imágenes Sentinel-2 y Landsat.
-- Calcular el índice NDVI.
-- Conocer otros índices utilizados en agricultura.
-- Exportar resultados para su utilización en SIG.
+- Comprender el funcionamiento de Google Earth Engine.
+- Utilizar el Code Editor.
+- Trabajar con geometrías y datos vectoriales.
+- Explorar imágenes Sentinel-2 y Landsat.
+- Calcular índices espectrales (NDVI, EVI, NDWI y NBR).
+- Visualizar resultados.
+- Exportar información para utilizarla en QGIS.
+
+---
+
+# 📚 Contenido del curso
+
+| Lección | Tema |
+|----------|------|
+| Script 01 | Introducción al Code Editor y operaciones geométricas |
+| Script 02 | Datos geográficos y geometrías |
+| Script 03 | Imágenes satelitales Sentinel-2 y Landsat |
+| Script 04 | Índices espectrales (NDVI, EVI, NDWI y NBR) |
+| Script 05 | Aplicación interactiva en Google Earth Engine |
 
 ---
 
 # 👥 Público objetivo
 
-- Personal técnico de instituciones nacionales.
+- Técnicos de instituciones nacionales.
 - Especialistas SIG.
-- Analistas geoespaciales.
 - Profesionales del sector agropecuario.
-- Especialistas ambientales.
+- Analistas ambientales.
 - Investigadores.
+- Estudiantes universitarios.
 
 ---
 
-# ✅ Requisitos previos
+# ✅ Requisitos
 
 - Cuenta de Google.
-- Acceso aprobado a Google Earth Engine.
+- Acceso a Google Earth Engine.
 - Navegador actualizado.
 - QGIS instalado.
-- Conexión estable a Internet.
+- Conexión a Internet.
 
 ---
 
-# 🛰️ Herramientas
+# 🛰️ Tecnologías utilizadas
 
-| Herramienta | Aplicación |
-|------------|------------|
+| Herramienta | Uso |
+|-------------|-----|
 | Google Earth Engine | Procesamiento geoespacial en la nube |
-| Sentinel-2 | Monitoreo agrícola |
-| Landsat | Series temporales |
-| QGIS | Visualización de resultados exportados |
-
----
-
-# ⏱️ Agenda (180 minutos)
-
-| Tiempo | Tema |
-|---------|------|
-|15 min|Bienvenida e introducción a Google Earth Engine|
-|30 min|Conociendo la plataforma|
-|25 min|Primeros pasos en Google Earth Engine|
-|10 min|Pausa|
-|45 min|Exploración de imágenes Sentinel-2 y Landsat|
-|35 min|Índices espectrales para agricultura|
-|10 min|Exportación de resultados|
-|10 min|Casos de uso y cierre|
+| Sentinel-2 | Imágenes ópticas de alta resolución |
+| Landsat 9 | Monitoreo multitemporal |
+| QGIS | Visualización y análisis SIG |
 
 ---
 
@@ -99,6 +110,7 @@ gee-cloud-webinar
 ├── datos/
 ├── pdf/
 ├── scripts/
+├── portal.html
 ├── index.html
 ├── README.md
 └── LICENSE
@@ -106,66 +118,55 @@ gee-cloud-webinar
 
 ---
 
-# 📁 Contenido
+# 📁 Recursos disponibles
 
-## Portal
+## 📄 Documentación
 
-Página principal del webinar con:
+- Presentación del curso
+- Guía del participante
 
-- información general
-- agenda
-- caso práctico
-- recursos
-- enlaces
-- materiales
+## 💻 Scripts
 
----
+- Script 01
+- Script 02
+- Script 03
+- Script 04
+- Script 05
 
-## PDF
+## 🗂 Datos
 
-Guía del webinar.
-
----
-
-## Scripts
-
-Scripts utilizados durante las demostraciones.
+Datos utilizados durante los ejercicios prácticos.
 
 ---
 
-## Datos
+# 🚀 Flujo de aprendizaje
 
-Datos de ejemplo utilizados en los ejercicios.
+```text
+Introducción
+      │
+      ▼
+Datos geográficos
+      │
+      ▼
+Imágenes Sentinel-2 y Landsat
+      │
+      ▼
+Índices espectrales
+      │
+      ▼
+Aplicación interactiva
+```
 
 ---
 
-# 🌐 Recursos
+# 🔗 Recursos oficiales
 
 - Google Earth Engine
-- Code Editor
+- Earth Engine Code Editor
+- Catálogo de datos de Earth Engine
 - Sentinel-2
 - Landsat
 - QGIS
-
----
-
-# 🚀 Flujo de trabajo
-
-```text
-Google Earth Engine
-        │
-        ▼
-Sentinel-2 / Landsat
-        │
-        ▼
-Visualización
-        │
-        ▼
-NDVI y otros índices
-        │
-        ▼
-Exportación
-```
 
 ---
 
@@ -177,17 +178,20 @@ Especialista SIG y Geomática
 
 Proyecto Flagship
 
-Corredor Seco Centroamericano
+**Promover la restauración de ecosistemas productivos en el Corredor Seco Centroamericano**
 
 Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO)
 
 📧 grettel.vargasazofeifa@fao.org
 
 ---
-## 🌐 Portal del Webinar
 
-👉 **https://grettelvargasaz.github.io/gee-cloud-webinar/**
+## 🌐 Portal del curso
+
+https://grettelvargasaz.github.io/gee-cloud-webinar/
+
+---
 
 # 📄 Licencia
 
-Este repositorio se utiliza con fines educativos para apoyar la capacitación en Google Earth Engine y el fortalecimiento de capacidades en monitoreo agroambiental.
+Repositorio desarrollado con fines educativos para fortalecer capacidades en el uso de Google Earth Engine y el monitoreo agroambiental mediante imágenes satelitales.
