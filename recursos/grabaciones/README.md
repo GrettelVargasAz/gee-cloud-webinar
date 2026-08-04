@@ -1,4 +1,4 @@
-# 🎥 Grabación del webinar
+# 🎥 Grabación del webinar parte 1
 
 ## Introducción a Google Earth Engine
 
