@@ -39,7 +39,7 @@ El curso dispone de un portal web desde el cual puede acceder a:
 - Material complementario
 - Enlaces oficiales
 
-👉 https://grettelvargasaz.github.io/gee-cloud-webinar/
+👉 Link al portal del curso https://grettelvargasaz.github.io/gee-cloud-webinar/
 
 ---
 
