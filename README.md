@@ -178,12 +178,6 @@ Especialista SIG y Geomática
 
 Proyecto Flagship
 
-**Promover la restauración de ecosistemas productivos en el Corredor Seco Centroamericano**
-
-Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO)
-
-📧 grettel.vargasazofeifa@fao.org
-
 ---
 
 ## 🌐 Portal del curso
