@@ -176,7 +176,6 @@ Aplicación interactiva
 
 Especialista SIG y Geomática
 
-Proyecto Flagship
 
 ---
 
