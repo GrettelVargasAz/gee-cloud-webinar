@@ -9,7 +9,7 @@ La grabación completa de la primera sesión del webinar está disponible en el 
 
 ▶️ [Ver grabación de la sesión 1](https://drive.google.com/file/d/1bQP33rl6kNavybT6LhR1_hYRop_Jjrlt/view?usp=sharing)
 
-### 📌 Sesión 2 – Continuación del webinar
+### 📌 Sesión 2 – 8 de octubre de 2026
 
 La grabación completa de la segunda sesión del webinar está disponible en el siguiente enlace:
 
