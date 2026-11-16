@@ -1,31 +1,39 @@
-# 🎥 Grabación del webinar Guatemala
 
-## Introducción a Google Earth Engine
+# 🎥 Grabaciones de los webinars de Google Earth Engine
 
-La grabación completa del webinar realizado el 29 de setiembre de 2026 está disponible en el siguiente enlace:
+## 🇬🇹 Guatemala – Introducción a Google Earth Engine
 
-▶️ Ver grabación del webinar en este enlace (https://drive.google.com/file/d/1bQP33rl6kNavybT6LhR1_hYRop_Jjrlt/view?usp=sharing)
+### 📌 Sesión 1 – 29 de setiembre de 2026
 
+La grabación completa de la primera sesión del webinar está disponible en el siguiente enlace:
 
+▶️ [Ver grabación de la sesión 1](https://drive.google.com/file/d/1bQP33rl6kNavybT6LhR1_hYRop_Jjrlt/view?usp=sharing)
 
+### 📌 Sesión 2 – Continuación del webinar
 
-_______________________________________________________________________________________________________________________________________
+La grabación completa de la segunda sesión del webinar está disponible en el siguiente enlace:
 
+▶️ [Ver grabación de la sesión 2](https://drive.google.com/file/d/10G8HjMYjJjOwp4MW7LI5-zbFEusjzeG9/view?usp=sharing)
 
-# 🎥 Grabación del webinar Costa Rica
+**Modalidad:** Virtual
 
-## Introducción a Google Earth Engine
+---
 
-La grabación completa del webinar realizado el 4 de agosto de 2026 está disponible en el siguiente enlace:
+## 🇨🇷 Costa Rica – Introducción a Google Earth Engine
 
-▶️ Ver grabación del webinar en este enlace (https://drive.google.com/file/d/1SjBbH4NZW8gWLUxwgbnZd4Z7FcrpW-lf/view).
+### 📌 Sesión 1 – 4 de agosto de 2026
 
-**Duración:** aproximadamente 3 horas  
-**Modalidad:** virtual
+La grabación completa de la primera sesión está disponible en el siguiente enlace:
 
-La grabación completa del webinar realizado el 7 de agosto de 2026 está disponible en el siguiente enlace:
+▶️ [Ver grabación de la sesión 1](https://drive.google.com/file/d/1SjBbH4NZW8gWLUxwgbnZd4Z7FcrpW-lf/view)
 
-▶️ Ver grabación del webinar en este enlace (https://drive.google.com/file/d/1uippfpkPid13wU6TJUiSyAEBG5OldLmA/view?usp=sharing)
+### 📌 Sesión 2 – 7 de agosto de 2026
 
+La grabación completa de la segunda sesión está disponible en el siguiente enlace:
 
+▶️ [Ver grabación de la sesión 2](https://drive.google.com/file/d/1uippfpkPid13wU6TJUiSyAEBG5OldLmA/view?usp=sharing)
 
+**Duración:** Aproximadamente 3 horas por sesión  
+**Modalidad:** Virtual
+
+---
